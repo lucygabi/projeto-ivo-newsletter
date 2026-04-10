@@ -1,0 +1,31 @@
+{
+  "name": "projeto-ivo-newsletter",
+  "version": "1.0.0",
+  "description": "Newsletter Territorio em Foco - PNDTS 2026 | MDA/SFDT/CGDT",
+  "private": true,
+  "scripts": {
+    "dev": "browser-sync start --server --files 'src/**/*.html, src/**/*.css' --startPath src/ --no-notify",
+    "preview": "browser-sync start --server --files 'dist/**/*' --startPath dist/ --no-notify",
+    "build": "node scripts/build.js",
+    "build:email": "node scripts/build-email.js",
+    "build:pdf": "node scripts/build-pdf.js",
+    "optimize:images": "node scripts/optimize-images.js",
+    "clean": "rm -rf dist/*"
+  },
+  "keywords": [
+    "newsletter",
+    "mda",
+    "pndts",
+    "territorio-em-foco"
+  ],
+  "author": "MDA/SFDT/CGDT",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "cheerio": "^1.2.0",
+    "html-minifier-terser": "^7.2.0",
+    "juice": "^11.1.1",
+    "puppeteer": "^24.40.0",
+    "sharp": "^0.34.5"
+  }
+}

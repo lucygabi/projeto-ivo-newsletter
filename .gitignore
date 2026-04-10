@@ -17,6 +17,9 @@ build/
 *.log
 logs/
 
+# Newsletter - imagens otimizadas (geradas via script)
+src/assets/images/optimized/
+
 # IDE & OS (AIOX)
 .DS_Store
 Thumbs.db

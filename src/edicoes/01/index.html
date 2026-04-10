@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Território em Foco — PNDTS 2026 | Edição 01</title>
+  <meta name="description" content="Informativo mensal da Política Nacional de Desenvolvimento Territorial Sustentável. Acompanhe ações, projetos e resultados nos territórios rurais do Brasil.">
+  <meta property="og:title" content="Território em Foco — PNDTS 2026">
+  <meta property="og:description" content="Informativo mensal do MDA sobre a Política Nacional de Desenvolvimento Territorial Sustentável.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#088408">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+
+    :root {
+      /* Paleta extraída do SVG original da logo */
+      --verde-1: #088408;    /* verde escuro da logo */
+      --verde-2: #009500;    /* verde principal */
+      --verde-3: #00CF00;    /* verde claro */
+      --verde-bg: #E8F5E9;
+      --amarelo: #FFCF00;    /* amarelo sol */
+      --amarelo-bg: #FFF8E1;
+      --azul: #183EFF;       /* azul ondas */
+      --azul-claro: #4A6AFF;
+      --azul-bg: #E8EEFF;
+      --vermelho: #F1443E;   /* vermelho ondas */
+      --laranja: #FF7D00;    /* laranja sol */
+      --cinza-logo: #3C3C3C; /* cinza da tipografia */
+      --cinza-700: #374151;
+      --cinza-600: #4b5563;
+      --cinza-500: #6b7280;
+      --cinza-400: #9ca3af;
+      --cinza-200: #e5e7eb;
+      --cinza-100: #f3f4f6;
+      --cinza-50: #f9fafb;
+      --branco: #ffffff;
+      --font: 'Poppins', sans-serif;
+      --font-serif: 'Source Serif 4', Georgia, serif;
+
+      --mapa-ba: #d4897a; --mapa-ma: #8fb87a; --mapa-ce: #6aab9a;
+      --mapa-rn: #7b9ec4; --mapa-pb: #c4a86a; --mapa-pi: #b8ca8a;
+      --mapa-al: #d4a8c4; --mapa-pe: #e8b87a; --mapa-se: #9ab8d4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font);
+      background: #f0f2f5;
+      color: var(--cinza-logo);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 20px auto;
+      background: var(--branco);
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 60px rgba(0,0,0,0.08);
+    }
+
+    /* ======================================= */
+    /*  HERO HEADER — Identidade Territórios   */
+    /* ======================================= */
+    .hero {
+      position: relative;
+      background: linear-gradient(160deg, #0a5c0a 0%, var(--verde-1) 30%, var(--verde-2) 70%, #08AF08 100%);
+      padding: 0;
+      overflow: hidden;
+      min-height: 340px;
+    }
+
+    /* Ondas concêntricas azuis — inspiradas na logo */
+    .hero .ondas-azuis {
+      position: absolute;
+      top: -20px; left: -30px;
+      width: 200px; height: 200px;
+      opacity: 0.18;
+    }
+
+    /* Ondas vermelhas — inspiradas na logo */
+    .hero .ondas-vermelhas {
+      position: absolute;
+      top: 10px; right: -20px;
+      width: 140px; height: 140px;
+      opacity: 0.15;
+    }
+
+    /* Sol — inspirado na logo */
+    .hero .sol {
+      position: absolute;
+      top: 40px; right: 80px;
+      width: 80px; height: 80px;
+      opacity: 0.2;
+    }
+
+    /* Curvas de nível no rodapé do hero */
+    .hero .curvas {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40px;
+    }
+
+    .hero-barra {
+      background: rgba(0,0,0,0.15);
+      padding: 6px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+    .hero-barra span {
+      font-size: 9px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .hero-barra .gov { color: var(--amarelo); font-weight: 700; }
+
+    .hero-content {
+      padding: 40px 56px 50px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .hero-logo {
+      width: 100px; height: 100px;
+      flex-shrink: 0;
+      background: var(--branco);
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .hero-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+    .hero-info .h-org {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+    .hero-info .h-programa {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .hero-info .h-edition {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-info .h-edition .badge {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      color: var(--branco);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--amarelo);
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .hero-date {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Faixa multicolorida — identidade completa */
+    .faixa-id {
+      height: 6px;
+      background: linear-gradient(90deg,
+        var(--verde-2) 0%, var(--verde-2) 20%,
+        var(--amarelo) 20%, var(--amarelo) 40%,
+        var(--azul) 40%, var(--azul) 60%,
+        var(--vermelho) 60%, var(--vermelho) 80%,
+        var(--laranja) 80%, var(--laranja) 100%
+      );
+    }
+
+    /* ================================ */
+    /*  EDITORIAL                       */
+    /* ================================ */
+    .editorial {
+      padding: 32px 56px;
+      background: linear-gradient(135deg, var(--amarelo-bg) 0%, var(--branco) 100%);
+      border-bottom: 1px solid var(--cinza-200);
+    }
+    .ed-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--verde-1);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ed-label::before {
+      content: '';
+      width: 18px; height: 3px;
+      background: var(--amarelo);
+      border-radius: 2px;
+    }
+    .editorial blockquote {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--cinza-700);
+      font-style: italic;
+      padding-left: 24px;
+      border-left: 4px solid var(--verde-2);
+      position: relative;
+    }
+    .editorial blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px; left: 24px;
+      font-size: 60px;
+      color: var(--verde-2);
+      opacity: 0.15;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    /* ================================ */
+    /*  SEÇÃO PADRÃO                    */
+    /* ================================ */
+    .section { padding: 44px 56px; }
+    .section + .section { border-top: 1px solid var(--cinza-100); }
+    .sec-header { margin-bottom: 28px; }
+    .sec-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--verde-1);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-label::before {
+      content: '';
+      width: 18px; height: 3px;
+      background: var(--amarelo);
+      border-radius: 2px;
+    }
+    .sec-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--cinza-logo);
+      margin-top: 6px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .sec-desc {
+      font-size: 14px;
+      color: var(--cinza-500);
+      margin-top: 4px;
+    }
+
+    /* ================================ */
+    /*  DESTAQUE — card verde premium   */
+    /* ================================ */
+    .destaque {
+      background: linear-gradient(135deg, var(--verde-1) 0%, var(--verde-2) 60%, #08AF08 100%);
+      color: var(--branco);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ondas decorativas dentro do card */
+    .destaque::before {
+      content: '';
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      border: 3px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .destaque::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; right: 60px;
+      width: 100px; height: 100px;
+      border: 2px solid rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .destaque h3 {
+      font-size: 20px; font-weight: 700; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .destaque h3 .ico-h3 {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .destaque p { font-size: 14.5px; line-height: 1.8; opacity: 0.93; position: relative; z-index: 1; }
+    .destaque .refs {
+      margin-top: 16px; font-size: 11px; opacity: 0.5;
+      font-style: italic; position: relative; z-index: 1;
+      padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Bullet items premium */
+    .bullet-list { list-style: none; margin-top: 24px; }
+    .bullet-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 12px 0; font-size: 15px; font-weight: 500;
+      color: var(--cinza-logo);
+      border-bottom: 1px solid var(--cinza-100);
+    }
+    .bullet-list li:last-child { border-bottom: none; }
+    .bullet-list .ico-b {
+      flex-shrink: 0; width: 36px; height: 36px;
+      background: var(--verde-bg); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .bullet-list li .sub { font-weight: 400; color: var(--cinza-500); font-size: 13px; }
+
+    /* ================================ */
+    /*  EIXOS — cards horizontais       */
+    /* ================================ */
+    .eixos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+    .eixo {
+      background: var(--branco);
+      border: 1px solid var(--cinza-200);
+      border-radius: 16px;
+      padding: 24px 18px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .eixo:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+    .eixo-ico {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--verde-bg) 0%, #d4edda 100%);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px; font-size: 24px;
+    }
+    .eixo strong { display: block; font-size: 13px; font-weight: 700; color: var(--verde-1); margin-bottom: 4px; }
+    .eixo span { font-size: 11.5px; color: var(--cinza-500); line-height: 1.4; }
+
+    /* ================================ */
+    /*  CPDT — cards com acento lateral */
+    /* ================================ */
+    .cpdt-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+    .cpdt-card {
+      background: var(--cinza-50);
+      border-radius: 16px;
+      padding: 24px;
+      border-left: 5px solid var(--verde-2);
+      position: relative;
+    }
+    .cpdt-card h4 {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--verde-1); font-weight: 700; margin-bottom: 8px;
+    }
+    .cpdt-card p { font-size: 13px; color: var(--cinza-600); line-height: 1.65; }
+
+    /* ================================ */
+    /*  NÚMEROS — banner impactante     */
+    /* ================================ */
+    .numeros {
+      background: linear-gradient(160deg, #063d06 0%, var(--verde-1) 40%, var(--verde-2) 100%);
+      color: var(--branco);
+      padding: 48px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ondas concêntricas decorativas */
+    .numeros::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 300px; height: 300px;
+      border: 2px solid rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .numeros::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border: 2px solid rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .numeros .sec-label { color: rgba(255,255,255,0.6); }
+    .numeros .sec-label::before { background: rgba(255,255,255,0.3); }
+    .numeros .sec-title { color: var(--branco); }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 36px; font-weight: 900; line-height: 1;
+      color: var(--amarelo);
+    }
+    .stat .num small { font-size: 18px; font-weight: 700; }
+    .stat .txt { font-size: 11.5px; margin-top: 6px; opacity: 0.75; line-height: 1.4; }
+
+    /* ================================ */
+    /*  MAPA IBGE + LEGENDA             */
+    /* ================================ */
+    .mapa-container {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 32px;
+      align-items: start;
+    }
+    .mapa-svg-wrap {
+      background: linear-gradient(135deg, var(--cinza-50) 0%, var(--branco) 100%);
+      border: 1px solid var(--cinza-200);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .mapa-svg-wrap svg { width: 100%; height: auto; }
+
+    .mapa-legenda h4 {
+      font-size: 14px; font-weight: 700; color: var(--cinza-logo);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .mapa-legenda h4::before {
+      content: ''; width: 14px; height: 3px;
+      background: var(--verde-2); border-radius: 2px;
+    }
+    .leg-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 0; border-bottom: 1px solid var(--cinza-100);
+    }
+    .leg-item:last-child { border-bottom: none; }
+    .leg-left { display: flex; align-items: center; gap: 10px; }
+    .leg-dot { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
+    .leg-name { font-size: 13px; font-weight: 600; color: var(--cinza-700); }
+    .leg-num { font-size: 16px; font-weight: 800; color: var(--verde-1); }
+    .leg-bar-bg { width: 100%; height: 4px; background: var(--cinza-100); border-radius: 2px; margin-top: 4px; }
+    .leg-bar { height: 4px; border-radius: 2px; }
+    .leg-total {
+      margin-top: 16px; padding-top: 12px;
+      border-top: 3px solid var(--verde-2);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .leg-total span:first-child {
+      font-size: 11px; font-weight: 700; color: var(--cinza-500);
+      text-transform: uppercase; letter-spacing: 2px;
+    }
+    .leg-total span:last-child {
+      font-size: 28px; font-weight: 900; color: var(--verde-1);
+    }
+
+    /* ================================ */
+    /*  CARDS GRID premium              */
+    /* ================================ */
+    .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+    .card {
+      border: 1px solid var(--cinza-200);
+      border-radius: 16px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--verde-2), var(--verde-3));
+      border-radius: 16px 16px 0 0;
+    }
+    .card-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--verde-1); margin-bottom: 6px;
+    }
+    .card h4 { font-size: 15px; font-weight: 700; color: var(--cinza-logo); margin-bottom: 6px; }
+    .card p { font-size: 13px; color: var(--cinza-500); line-height: 1.65; }
+
+    .tags-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+    .tag {
+      font-size: 11px; font-weight: 600; padding: 5px 16px;
+      border-radius: 100px; background: var(--verde-bg); color: var(--verde-1);
+      border: 1px solid rgba(8,132,8,0.1);
+    }
+
+    /* ================================ */
+    /*  VOZES DO CAMPO                  */
+    /* ================================ */
+    .vozes { background: linear-gradient(180deg, var(--verde-bg) 0%, var(--cinza-50) 100%); }
+    .depoimento { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; }
+    .dep-foto {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--verde-1), var(--verde-2));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: var(--branco);
+      box-shadow: 0 4px 15px rgba(8,132,8,0.2);
+    }
+    .dep-text blockquote {
+      font-family: var(--font-serif); font-size: 16px;
+      font-style: italic; line-height: 1.85; color: var(--cinza-700);
+    }
+    .dep-author { margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--verde-1); }
+    .dep-role { font-size: 12px; color: var(--cinza-500); margin-top: 2px; }
+
+    /* ================================ */
+    /*  TED — card azul premium         */
+    /* ================================ */
+    .ted-box {
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+      color: var(--branco);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin: 0 56px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ted-box::before {
+      content: ''; position: absolute; top: -40px; right: -40px;
+      width: 150px; height: 150px;
+      border: 3px solid rgba(255,255,255,0.06); border-radius: 50%;
+    }
+    .ted-box h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .ted-sub { font-size: 13.5px; opacity: 0.8; margin-bottom: 24px; line-height: 1.7; }
+    .ted-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; position: relative; z-index: 1; }
+    .ted-item {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 18px 12px; text-align: center;
+    }
+    .ted-item .n { font-size: 20px; font-weight: 800; color: var(--amarelo); }
+    .ted-item .l { font-size: 10px; opacity: 0.65; margin-top: 4px; }
+
+    /* ================================ */
+    /*  AGENDA premium                  */
+    /* ================================ */
+    .ag-list { display: flex; flex-direction: column; gap: 4px; }
+    .ag-item {
+      display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+      align-items: center; padding: 16px 0;
+      border-bottom: 1px solid var(--cinza-100);
+    }
+    .ag-item:last-child { border-bottom: none; }
+    .ag-date {
+      text-align: center;
+      background: var(--verde-bg);
+      border-radius: 12px;
+      padding: 8px 4px;
+    }
+    .ag-date .d { font-size: 24px; font-weight: 900; color: var(--verde-1); line-height: 1; }
+    .ag-date .m { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--verde-2); font-weight: 700; }
+    .ag-info h4 { font-size: 14px; font-weight: 600; color: var(--cinza-logo); }
+    .ag-info p { font-size: 12px; color: var(--cinza-500); margin-top: 2px; }
+    .ag-badge {
+      font-size: 10px; font-weight: 700; padding: 4px 12px;
+      border-radius: 100px; background: var(--verde-bg); color: var(--verde-1);
+      letter-spacing: 0.5px;
+    }
+
+    /* ================================ */
+    /*  CTA                             */
+    /* ================================ */
+    .cta-section { background: var(--cinza-50); }
+    .cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .cta-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-200);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+    .cta-ico {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--verde-bg), #d4edda);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px; font-size: 24px;
+    }
+    .cta-card strong { display: block; font-size: 13px; color: var(--verde-1); margin-bottom: 6px; }
+    .cta-card p { font-size: 12px; color: var(--cinza-500); line-height: 1.55; }
+
+    /* ================================ */
+    /*  FOOTER premium                  */
+    /* ================================ */
+    .footer {
+      background: var(--cinza-logo);
+      color: var(--branco);
+    }
+    .footer-faixa {
+      height: 6px;
+      background: linear-gradient(90deg,
+        var(--verde-2) 20%, var(--amarelo) 20% 40%,
+        var(--azul) 40% 60%, var(--vermelho) 60% 80%,
+        var(--laranja) 80%);
+    }
+    .footer-inner { padding: 32px 56px; }
+    .ft-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .ft-logo { display: flex; align-items: center; gap: 14px; }
+    .ft-logo img { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: var(--branco); padding: 4px; }
+    .ft-logo-text { font-size: 18px; font-weight: 800; }
+    .ft-logo-text em { font-style: normal; color: var(--amarelo); }
+    .ft-social { display: flex; gap: 8px; }
+    .ft-social a {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--branco); text-decoration: none; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .ft-social a:hover { background: var(--verde-2); }
+    .ft-contact { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+    .ft-contact a { color: var(--amarelo); text-decoration: none; font-weight: 600; }
+    .ft-sources { font-size: 10px; color: rgba(255,255,255,0.35); line-height: 1.6; }
+    .ft-gov {
+      margin-top: 20px; padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; gap: 20px;
+    }
+    .ft-gov-marca { font-size: 12px; font-weight: 800; color: var(--amarelo); white-space: nowrap; letter-spacing: 0.5px; }
+    .ft-gov-text { font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .ft-bottom {
+      display: flex; justify-content: space-between; margin-top: 16px;
+      padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 10px; color: rgba(255,255,255,0.3);
+    }
+
+    /* ================================ */
+    /*  RESPONSIVE                      */
+    /* ================================ */
+    @media (max-width: 1024px) {
+      .page { max-width: 100%; margin: 0; border-radius: 0; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .ted-grid { grid-template-columns: repeat(2, 1fr); }
+      .mapa-container { grid-template-columns: 1fr; gap: 24px; }
+      .mapa-legenda { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 16px; }
+      .mapa-legenda h4, .leg-total { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      .hero-barra { padding: 6px 20px; }
+      .hero-content { padding: 28px 20px 40px; }
+      .section, .editorial { padding-left: 20px; padding-right: 20px; }
+      .numeros { padding: 36px 20px; }
+      .ted-box { margin: 0 20px 28px; padding: 28px 20px; }
+      .footer-inner { padding: 24px 20px; }
+      .hero-logo { width: 72px; height: 72px; border-radius: 14px; padding: 8px; }
+      .hero h1 { font-size: 28px; }
+      .hero-subtitle { font-size: 13px; }
+      .sec-title { font-size: 22px; }
+      .editorial blockquote { font-size: 14px; padding-left: 16px; }
+      .destaque { padding: 28px 24px; border-radius: 16px; }
+      .eixos { grid-template-columns: 1fr; gap: 10px; }
+      .eixo { display: flex; align-items: center; text-align: left; gap: 14px; padding: 16px; }
+      .eixo-ico { margin: 0; flex-shrink: 0; }
+      .cpdt-row { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .cta-grid { grid-template-columns: 1fr; }
+      .cta-card { display: flex; align-items: center; text-align: left; gap: 14px; padding: 16px; }
+      .cta-ico { margin: 0; flex-shrink: 0; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat .num { font-size: 28px; }
+      .ted-grid { grid-template-columns: repeat(2, 1fr); }
+      .depoimento { grid-template-columns: 56px 1fr; gap: 16px; }
+      .dep-foto { width: 56px; height: 56px; font-size: 22px; }
+    }
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 22px; }
+      .stat .num { font-size: 24px; }
+      .ft-top { flex-direction: column; gap: 12px; text-align: center; }
+      .hero-barra { flex-direction: column; gap: 2px; text-align: center; }
+    }
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; max-width: 100%; border-radius: 0; margin: 0; }
+      .hero, .numeros, .footer, .destaque, .ted-box, .faixa-id {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ==================== HERO ==================== -->
+  <div class="hero">
+    <!-- Ondas concêntricas azuis (inspiradas na logo) -->
+    <svg class="ondas-azuis" viewBox="0 0 200 200" fill="none">
+      <circle cx="100" cy="100" r="90" stroke="#183EFF" stroke-width="8" fill="none"/>
+      <circle cx="100" cy="100" r="70" stroke="#183EFF" stroke-width="6" fill="none"/>
+      <circle cx="100" cy="100" r="52" stroke="#183EFF" stroke-width="5" fill="none"/>
+      <circle cx="100" cy="100" r="36" stroke="#183EFF" stroke-width="4" fill="none"/>
+      <circle cx="100" cy="100" r="22" stroke="#183EFF" stroke-width="3" fill="none"/>
+    </svg>
+
+    <!-- Ondas vermelhas (inspiradas na logo) -->
+    <svg class="ondas-vermelhas" viewBox="0 0 140 140" fill="none">
+      <circle cx="70" cy="70" r="60" stroke="#F1443E" stroke-width="6" fill="none"/>
+      <circle cx="70" cy="70" r="45" stroke="#F1443E" stroke-width="5" fill="none"/>
+      <circle cx="70" cy="70" r="32" stroke="#F1443E" stroke-width="4" fill="none"/>
+      <circle cx="70" cy="70" r="20" stroke="#FF7D00" stroke-width="3" fill="none"/>
+    </svg>
+
+    <!-- Sol (inspirado na logo) -->
+    <svg class="sol" viewBox="0 0 80 80" fill="none">
+      <circle cx="40" cy="40" r="18" fill="#FFCF00"/>
+      <line x1="40" y1="8" x2="40" y2="16" stroke="#FFCF00" stroke-width="3" stroke-linecap="round"/>
+      <line x1="40" y1="64" x2="40" y2="72" stroke="#FFCF00" stroke-width="3" stroke-linecap="round"/>
+      <line x1="8" y1="40" x2="16" y2="40" stroke="#FFCF00" stroke-width="3" stroke-linecap="round"/>
+      <line x1="64" y1="40" x2="72" y2="40" stroke="#FFCF00" stroke-width="3" stroke-linecap="round"/>
+      <line x1="17" y1="17" x2="23" y2="23" stroke="#FFCF00" stroke-width="2" stroke-linecap="round"/>
+      <line x1="57" y1="57" x2="63" y2="63" stroke="#FFCF00" stroke-width="2" stroke-linecap="round"/>
+      <line x1="17" y1="63" x2="23" y2="57" stroke="#FFCF00" stroke-width="2" stroke-linecap="round"/>
+      <line x1="57" y1="23" x2="63" y2="17" stroke="#FFCF00" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Curvas de nível (paisagem da logo) -->
+    <svg class="curvas" viewBox="0 0 820 40" preserveAspectRatio="none">
+      <path d="M0,40 Q205,10 410,25 Q615,38 820,15 L820,40 Z" fill="rgba(255,255,255,0.03)"/>
+      <path d="M0,40 Q205,20 410,30 Q615,40 820,22 L820,40 Z" fill="rgba(255,255,255,0.05)"/>
+    </svg>
+
+    <div class="hero-barra">
+      <span>Ministério do Desenvolvimento Agrário e Agricultura Familiar</span>
+      <span class="gov">GOVERNO FEDERAL</span>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-top">
+        <div class="hero-logo">
+          <img src="../../assets/logos/logo-mapa.png" alt="Logo Territórios da Cidadania — Programa Nacional de Desenvolvimento Territorial Sustentável">
+        </div>
+        <div class="hero-info">
+          <div class="h-org">MDA &middot; SFDT &middot; CGDT</div>
+          <div class="h-programa">Territórios da Cidadania</div>
+          <div class="h-edition">Informativo Institucional <span class="badge">EDIÇÃO 01</span></div>
+        </div>
+      </div>
+
+      <h1>Território em <em>Foco</em></h1>
+
+      <div class="hero-subtitle">Política Nacional de Desenvolvimento Territorial Sustentável — acompanhe as ações, projetos e resultados nos territórios rurais do Brasil.</div>
+      <div class="hero-date">Brasília, abril de 2026</div>
+    </div>
+  </div>
+
+  <!-- FAIXA IDENTIDADE -->
+  <div class="faixa-id"></div>
+
+  <!-- EDITORIAL -->
+  <div class="editorial">
+    <div class="ed-label">Nota Editorial</div>
+    <blockquote>
+      Este informativo nasceu para a gente ficar mais perto. Queremos contar tudo o que está rolando nos Territórios da Cidadania, fortalecendo a ponte entre quem vive no campo e quem faz a gestão pública. É com esse espírito de união que chegamos a 2026: o ano em que o PNDTS vira a peça-chave para transformar a vida no interior.
+    </blockquote>
+  </div>
+
+  <!-- DESTAQUE DO MÊS -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-label">Destaque</div>
+      <div class="sec-title">2026: O Ano da Consolidação do PNDTS</div>
+    </div>
+
+    <div class="destaque">
+      <h3><span class="ico-h3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V5a2 2 0 012-2h6l2 2h6a2 2 0 012 2v12a2 2 0 01-2 2H3z"/></svg></span> O que é o PNDTS?</h3>
+      <p>Retomado pelo MDA/SFDT em 2024, o programa reconhece o território como unidade central de planejamento, articulando políticas públicas para a agricultura familiar, povos tradicionais e redução das desigualdades no campo.</p>
+      <div class="refs">Resolução CONDRAF nº 16/2024 (atualizada pela Res. nº 40/2025) &middot; Portaria MDA nº 35/2025</div>
+    </div>
+
+    <ul class="bullet-list">
+      <li>
+        <span class="ico-b"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M12 22c-4-2-8-6-8-11a4 4 0 018 0V3"/><path d="M12 22c4-2 8-6 8-11a4 4 0 00-8 0"/></svg></span>
+        <div><strong>Alimentos saudáveis</strong><br><span class="sub">Base agroecológica e soberania alimentar</span></div>
+      </li>
+      <li>
+        <span class="ico-b"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+        <div><strong>Redução da pobreza rural</strong><br><span class="sub">Ampliação do acesso a políticas públicas</span></div>
+      </li>
+      <li>
+        <span class="ico-b"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg></span>
+        <div><strong>Bem viver no campo</strong><br><span class="sub">Adaptação climática e desenvolvimento sustentável</span></div>
+      </li>
+    </ul>
+
+    <div class="eixos">
+      <div class="eixo">
+        <div class="eixo-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><strong>Territórios</strong><span>Governança pelos CODETERs</span></div>
+      </div>
+      <div class="eixo">
+        <div class="eixo-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg></div>
+        <div><strong>Conectividade</strong><span>Acesso digital rural</span></div>
+      </div>
+      <div class="eixo">
+        <div class="eixo-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+        <div><strong>Educação do Campo</strong><span>Saberes e modos de vida</span></div>
+      </div>
+    </div>
+
+    <div class="cpdt-row">
+      <div class="cpdt-card">
+        <h4>CPDT — Governo</h4>
+        <p>MDA/SFDT, órgãos federais e Superintendências Estaduais do MDA. O braço executivo que tira o PNDTS do papel.</p>
+      </div>
+      <div class="cpdt-card">
+        <h4>CPDT — Sociedade Civil</h4>
+        <p>Movimentos sociais, agricultores familiares e comunidades tradicionais. Composição paritária.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NÚMEROS -->
+  <div class="numeros">
+    <div class="sec-header">
+      <div class="sec-label">Dados</div>
+      <div class="sec-title">Números do Território</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">185</div><div class="txt">Territórios homologados (2025)</div></div>
+      <div class="stat"><div class="num">76<small>%</small></div><div class="txt">Taxa de revalidação nacional</div></div>
+      <div class="stat"><div class="num">109</div><div class="txt">Territórios no Nordeste (59%)</div></div>
+      <div class="stat"><div class="num">3.016</div><div class="txt">Municípios abrangidos</div></div>
+      <div class="stat"><div class="num">18,7<small>M</small></div><div class="txt">Habitantes rurais</div></div>
+      <div class="stat"><div class="num">243</div><div class="txt">Territórios originais (2016)</div></div>
+    </div>
+  </div>
+
+  <!-- PAS NORDESTE + MAPA IBGE -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-label">Projetos</div>
+      <div class="sec-title">Projetos CNPq / PAS Nordeste</div>
+      <div class="sec-desc">Chamada 17/2025</div>
+    </div>
+
+    <p style="font-size:14.5px;color:var(--cinza-600);line-height:1.8;margin-bottom:32px;">A Chamada CNPq 17/2025, coordenada pela Secretaria-Geral da Presidência da República no âmbito do PAS Nordeste, aprovou <strong style="color:var(--verde-1)">53 projetos</strong> de extensão e pesquisa em participação social nos territórios do Nordeste.</p>
+
+    <div class="mapa-container">
+      <div class="mapa-svg-wrap">
+        <!-- MAPA IBGE — Região Nordeste com geometrias reais -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-49.5 0.5 16 19">
+          <g transform="scale(0.0001,-0.0001)"><path d="M-393568,-85475l-1193,-453l-1699,-669l-273,-1252l-2197,-439l186,-1079l-1040,-1182l-265,-49l-1250,-505l-789,465l-644,-186l-832,-2946l-617,249l-2051,-1308l-920,341l-520,34l973,2593l-1511,1062l-300,1257l-1080,1122l-1444,616l-103,766l-1646,-315l-800,277l-230,3l-301,-671l-1342,-1673l-1780,-718l-91,-742l-1220,-1530l-592,-364l-1553,196l-1569,-258l-900,-333l-1770,-1783l-1098,-219l-872,-291l-799,-733l-1814,1088l-73,820l-1006,314l-152,-30l-1441,-6l-665,-194l-1530,1539l-1028,-421l-651,-434l-1762,-1011l-40,-49l-635,-905l648,-2143l1324,-812l-557,-762l155,-1396l-665,-152l-777,-2276l-790,-909l-743,-249l-932,-1711l-821,-538l-1789,932l-1561,-1000l-773,229l-910,-603l20,-718l-1970,-1263l-809,-338l-1374,795l-1639,170l-1685,1774l-329,1357l514,644l-947,1440l-659,841l-466,1089l-1203,-474l242,-1032l-989,-646l-220,-1329l-3074,-1645l-786,-1799l-543,-115l-68,-1228l-743,-42l-2114,-3264l-69,-1062l1206,-1494l889,148l2376,-998l319,-180l-636,-3l-2172,-67l539,-556l-708,-620l410,-645l-434,-500l682,-780l-761,-1077l177,-509l-4,-2501l816,-272l234,-1297l684,27l-1,-1l-984,-716l143,-1882l-456,-1908l2150,367l-1857,-1458l-290,-1891l352,-640l1893,594l349,-379l-1802,-1406l395,-296l-385,-1131l848,-249l-730,-1045l-285,-2393l521,-627l-149,-389l429,-1079l1240,-750l1529,-1233l-929,-914l112,-2092l-321,-141l-41,-82l-143,-1972l18,6l715,-909l-1110,-2991l1054,1108l2319,335l1229,1063l3112,1804l1001,890l1098,-83l555,725l1633,813l438,994l918,327l1842,1301l1454,554l1158,284l2503,-306l761,98l1864,-652l-352,-485l-628,-1747l-23,-901l1713,-628l1812,-1001l2,-1l438,252l1758,1206l1362,186l2361,-569l668,-567l2534,-1750l1030,-432l367,-313l2014,-995l120,-113l923,390l1248,-847l951,-50l1431,743l80,11l424,-377l3038,-2723l918,-827l24,-20l197,-1436l120,-1047l1877,-287l3257,1244l491,-665l671,468l557,-616l1251,-687l698,360l250,-441l1893,22l1082,-1036l1231,-947l896,18l580,-1138l-610,-1705l-994,-635l-930,-1015l-477,-1302l-1176,61l-377,-1052l62,-182l254,-2044l-1197,110l-64,-85l-259,113h-587l-864,-2622l309,-1341l-569,-725l852,-912l365,-411l685,-1216l704,-55l1039,-1193l165,6l118,-1606l-105,-855l20,-12l3086,-1974l2440,-1582l324,1049l1442,2344l2337,1699l1202,1430l-544,2390l-204,2847l946,2688l-241,1310l378,634l417,2623l533,901l-23,999l627,1534l956,2430l-408,827l-413,1013l-383,2799l-231,3003l-311,3022l-348,360l279,2317l166,968l288,2011l601,3106l-229,344l-161,236l-44,64l-162,1256l199,447l774,316l-418,945l405,854l-584,707l320,1763l1213,761l1542,1222l577,26l1169,-22l1644,1040l241,302l2500,2835l1369,1890l1234,1695l842,1397l1729,3583l1717,2984l-266,-163l-2109,-936l-537,341l-407,-505l-1270,472l-331,391l-1491,1344l-120,45l129,1442l-656,176l-591,1558l-746,830l-297,118l-280,1311l334,893l600,-74l1028,172l696,-563l1626,683l36,883l-90,832l-324,738l1044,1051l-254,492l31,930l-89,516l-274,333l111,784l-1113,1140l-1014,142l-575,3171l577,726l-745,739l-1272,244l-99,637l-227,232l-753,1814l-106,1584l-800,-472l-1105,772l442,943l-1006,353l-399,-1269l-833,386l-129,564l-1484,778l-975,-200l-1121,729l-1640,213l-441,1265l-842,363Z" fill="var(--mapa-ba)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-480254,-47783l-330,-259l-1362,-1068l-178,-139l-2395,-1873l-3033,-2370l1491,127l450,1063l739,363l1233,255l1389,-671l401,-215l1158,-145l544,335l774,-16l706,-657l392,-813l1471,-288l1201,-478l806,-1585l28,-156l346,-1935l44,-263l-15,-1547l92,-566l495,-1816l-496,-1726l51,-748l-399,-841l-311,-1157l-243,-1433l-266,-1762l-1133,-1347l-847,-111l611,-829l333,-569l1078,369l647,-714l-1134,-1033l888,10l730,-1081l1831,-2614l565,-335l1754,-2167l2082,1078l1980,580l1074,-802l355,-995l-783,-2447l-1827,-657l-557,150l-637,-1659l-571,-592l-149,-2638l-1202,-1436l-304,-633l1284,2l140,-712l1067,-767l-275,-808l928,-1214l1215,22l936,-1485l-532,-271l-520,-1531l1315,-572l378,-1070l299,-1729l1204,-1058l1299,2l1717,-4l108,-673l661,-78l1038,3190l-235,679l363,1917l-122,1170l508,801l-1026,1402l-425,3043l-589,1113l567,1402l976,710l1344,3282l428,1371l799,936l629,2696l-175,257l825,1916l1151,882l2551,795l963,199l40,14l1680,1195l1269,-343l1251,1671l1792,1078l732,23l369,605l267,576l1330,1947l1858,347l1767,676l1163,-161l1489,-1019l340,-245l634,118l1433,665l2551,190l777,1007l287,1434l391,2264l-1311,1397l-707,369l-473,1919l213,447l-198,2501l907,722l358,892l1526,1355l168,1283l-908,2950l-29,67l-604,2006l1030,1894l-985,1125l-157,248l-221,1402l436,532l868,879l654,1003l689,947l502,928l-120,971l504,624l164,214l540,513l663,1135l261,-379l704,90l1272,301l710,134l759,849l22,796l1380,443l58,65l1107,1557l724,997l-377,450l84,1583l188,273l-2358,4l-283,426l-1513,-52l-410,-657l-2240,546l-1539,780l-3733,1686l-2226,980l-742,200l-665,-35l-1052,-431l216,-1011l-757,645l-412,-842l-1182,-88l-444,798l966,338l503,1186l-1261,-87l-415,-1273l-762,20l-121,-933l-810,-516l-1476,-1822l-696,-243l-1174,77l901,583l829,1274l566,180l-161,906l205,598l-1420,-517l-99,-30l-371,-129l-838,-136l-1054,-3117l-148,-1447l-707,-821l-526,-191l-435,42l-709,280l105,1199l19,880l948,2085l1973,2560l-1046,1955l-1818,-1513l-333,158l1804,2552l-804,-39l956,409l-696,998l176,663l-812,589l-1441,-197l578,580l-982,207l1635,877l-871,599l-1303,-608l-362,139l295,1923l-927,-1487l-551,744l-1878,-25l-722,-1105l-556,16l152,2641l-1669,-1469l-389,1717l-964,335l-791,10l-914,810l-78,53l-74,47l-502,-304l-72,1602l-1001,-1494l-406,1492l-1095,-1490l-575,-799l579,-554l-724,-1401l148,-1454l-499,-1044l-1040,-144l52,-647l990,-248l-124,-838l-398,-1344l-201,-1051l-1330,-1194l-231,-1394l36,-577l-710,-1460l-993,-226l-635,-951l800,-1112l-915,-478l46,-2005l-924,-824l-433,-1256l-1321,-751l-42,-996l-898,-875l77,-403l-581,-2570l-2585,-2471l-246,-1369l-702,-418l-1732,-2726l-648,-486l-1362,-61l-2092,-1636M-444815,-27266l-1047,-881l-519,-1663l772,-415l819,646l-25,2313M-449662,-12711l-626,-469l397,-836l1222,729l-993,576Z" fill="var(--mapa-ma)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-407643,-82440l1604,1403l282,732l0,1l150,331l168,357l-110,1432l-1187,567l518,1034l-931,1777l626,473l1038,406l248,742l176,1076l467,1324l344,1432l545,1321l-1064,704l-2333,567l-262,758l-535,997l108,1593l-731,1171l-55,1188l-486,589l327,734l-362,2074l20,1234l-215,1492l-77,544l80,2670l-1511,806l-411,672l-1284,1542l164,596l582,1448l-648,917l622,1059l285,1005l297,429l203,1425l10,13l-413,595l-435,1030l-460,499l-168,717l64,1836l-949,288l-330,1223l642,695l-210,1063l-904,360l919,1701l616,1260l-106,831l-512,494l-1135,153l-2134,416l-1322,1061l-442,10l-84,-1583l377,-450l-724,-997l-1107,-1557l-58,-65l-1380,-443l-22,-796l-759,-849l-710,-134l-1272,-301l-704,-90l-261,379l-663,-1135l-540,-513l-164,-214l-504,-624l120,-971l-502,-928l-689,-947l-654,-1003l-868,-879l-436,-532l221,-1402l157,-248l985,-1125l-1030,-1894l604,-2006l29,-67l908,-2950l-168,-1283l-1526,-1355l-358,-892l-907,-722l198,-2501l-213,-447l473,-1919l707,-369l1311,-1397l-391,-2264l-287,-1434l-777,-1007l-2551,-190l-1433,-665l-634,-118l-340,245l-1489,1019l-1163,161l-1767,-676l-1858,-347l-1330,-1947l-267,-576l-369,-605l-732,-23l-1792,-1078l-1251,-1671l-1269,343l-1680,-1195l-40,-14l-963,-199l-2551,-795l-1151,-882l-825,-1916l175,-257l-629,-2696l-799,-936l-428,-1371l-1344,-3282l-976,-710l-567,-1402l589,-1113l425,-3043l1026,-1402l-508,-801l122,-1170l-363,-1917l235,-679l-1038,-3190l-661,78l1015,-1204l142,1068l1527,243l205,846l1203,474l466,-1089l659,-841l947,-1440l-514,-644l329,-1357l1685,-1774l1639,-170l1374,-795l809,338l1970,1263l-20,718l910,603l773,-229l1561,1000l1789,-932l821,538l932,1711l743,249l790,909l777,2276l665,152l-155,1396l557,762l-1324,812l-648,2143l635,905l40,49l1762,1011l651,434l1028,421l1530,-1539l665,194l1441,6l152,30l1006,-314l73,-820l1814,-1088l799,733l872,291l1098,219l1770,1783l900,333l1569,258l1553,-196l592,364l1220,1530l91,742l1780,718l1342,1673l301,671l230,-3l1518,743l570,994l1710,1352l516,-476l651,756l817,744l158,523Z" fill="var(--mapa-pi)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-403719,-28124l-831,90l-1351,-430l-1703,-24l-3413,-521l-1695,137l-515,-341l512,-494l106,-831l-616,-1260l-919,-1701l904,-360l210,-1063l-642,-695l330,-1223l949,-288l-64,-1836l168,-717l460,-499l435,-1030l413,-595l-10,-13l-203,-1425l-297,-429l-285,-1005l-622,-1059l648,-917l-582,-1448l-164,-596l1284,-1542l411,-672l1511,-806l-80,-2670l77,-544l215,-1492l-20,-1234l362,-2074l-327,-734l486,-589l55,-1188l731,-1171l-108,-1593l535,-997l262,-758l2333,-567l1064,-704l-545,-1321l-344,-1432l-467,-1324l-176,-1076l901,-487l882,380l1034,112l849,-535l2525,332l145,-15l1488,130l1421,-1019l533,-552l852,127l131,-1010l557,-360l223,-111l1032,-455l1198,-534l440,-528l96,-866l750,449l520,-329l39,14l673,937l1772,1236l25,50l321,432l1336,2437l-50,831l-656,318l-242,363l-256,1361l-40,15l-912,523l-2,830l935,638l578,647l-385,253l-201,509l234,786l420,981l-34,-28l721,1110l-241,656l-79,627l507,700l537,1016l612,641l652,-204l647,119l227,556l887,713l42,143l1007,1697l-242,825l547,491l1259,1226l894,1841l259,194l21,570l-34,210l1111,1669l368,1259l1732,405l207,49l895,229l1042,267l-732,1311l-2145,556l-627,274l-1664,1909l-756,447l-3026,2796l-756,949l-1785,1834l-620,1166l-1238,108l-648,142l-1542,1337l-1255,831l-1325,587l-1002,805l-922,1067l-1223,362l-1713,1041l-1704,823l-2214,1305l-2429,547l-1866,-7Z" fill="var(--mapa-ce)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-365044,-63865l1604,840l490,104l159,-255l-172,-528l698,-636l520,32l780,105l4,1l1309,-642l948,-42l905,53l66,5l1097,360l268,-76l554,-297l1393,-25l343,-30l433,-224l232,-266l1169,170l304,-287l482,-25l333,477l1440,179l-634,1764l-15,244l-605,1030l-39,436l-232,1581l-331,839l-495,1546l-235,1311l-287,952l-702,1356l-564,1113l-1071,1130l-1276,430l-1738,366l-1174,179l-1292,80l-620,-257l-2088,-249l-985,214l-3088,-2l-1401,1086l-1043,537l-1786,-293l-824,665l-317,500l-1042,-267l-895,-229l-207,-49l-1732,-405l-368,-1259l-1111,-1669l34,-210l-21,-570l-259,-194l-894,-1841l-1259,-1226l-547,-491l242,-825l-1007,-1697l-42,-143l-887,-713l-227,-556l-647,-119l-652,204l-612,-641l-537,-1016l-507,-700l79,-627l1041,255l104,-732l1042,-533l551,-489l597,223l1088,-391l493,585l441,-109l1074,632l762,785l666,872l676,689l928,8l943,244l1431,667l1223,566l826,-195l170,-1045l-767,-606l-1004,-952l-548,-827l76,-461l-835,-956l-200,-1773l1704,210l504,-432l293,-924l824,262l768,443l401,199l317,246l445,-737l489,264l752,258l1048,-1053l-298,-781l1051,-137l870,534l77,340l165,-13l102,1086l128,1229l825,-187l-433,1087l-467,413l238,928Z" fill="var(--mapa-rn)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-375718,-74891l501,496l899,828h461l717,673l533,152l838,-354l1237,-699l395,-243l283,-718l-398,-211l-5,-3l-536,-196l-1186,-1187l369,-627l108,-189l-18,-629l-187,-204l-1795,-1484l2006,-751l54,-1013l-160,-454l1396,-1193l661,-95l462,461l1205,633l1008,341l584,446l560,1751l361,344l902,-148l469,1060l1359,-213l469,676l898,-201l1052,-260l183,-26l599,228l624,237l557,167l354,92l1100,368l604,411l925,174l251,1326l70,286l605,131l715,280l203,208l97,67l527,276l1264,-48l1684,-695l3,-380l1313,-396l199,-90l312,1607l-31,1434l-366,1885l-166,263l-101,516l-296,1122l-261,983l-67,465l-335,1182l-35,1157l-1440,-179l-333,-477l-482,25l-304,287l-1169,-170l-232,266l-433,224l-343,30l-1393,25l-554,297l-268,76l-1097,-360l-66,-5l-905,-53l-948,42l-1309,642l-4,-1l-780,-105l-520,-32l-698,636l172,528l-159,255l-490,-104l-1604,-840l-238,-928l467,-413l433,-1087l-825,187l-128,-1229l-102,-1086l-165,13l-77,-340l-870,-534l-1051,137l298,781l-1048,1053l-752,-258l-489,-264l-445,737l-317,-246l-401,-199l-768,-443l-824,-262l-293,924l-504,432l-1704,-210l200,1773l835,956l-76,461l548,827l1004,952l767,606l-170,1045l-826,195l-1223,-566l-1431,-667l-943,-244l-928,-8l-676,-689l-666,-872l-762,-785l-1074,-632l-441,109l-493,-585l-1088,391l-597,-223l-551,489l-1042,533l-104,732l-1041,-255l241,-656l-721,-1110l34,28l-420,-981l-234,-786l201,-509l385,-253l-578,-647l-935,-638l2,-830l912,-523l40,-15l256,-1361l242,-363l656,-318l50,-831l-1336,-2437l-321,-432l1215,-1324l1365,362l229,-24l792,421l441,-607l890,-813l905,246l113,-232l506,467l688,-67l429,128l545,681l1361,409l139,314l76,165l108,121l1150,713l481,368Z" fill="var(--mapa-pb)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-413583,-87076l800,-277l1646,315l103,-766l1444,-616l1080,-1122l300,-1257l1511,-1062l-973,-2593l520,-34l920,-341l2051,1308l617,-249l832,2946l644,186l789,-465l1250,505l265,49l1040,1182l-186,1079l2197,439l273,1252l1699,669l1193,453l842,-363l441,-1265l1640,-213l1121,-729l975,200l1484,-778l129,-564l833,-386l399,1269l1006,-353l-442,-943l1105,-772l800,472l106,-1584l753,-1814l812,797l641,774l802,167l605,586l1254,1647l708,863l563,-895l607,-679l1131,404l62,-49l1235,-598l1171,-1244l493,-744l309,114l292,-502l1115,-518l23,101l757,-519l428,-181l570,1010l830,-40l971,-126l748,-388l1245,690l975,394l470,50l644,443l958,1293l745,169l97,102l-167,600l949,493l449,44l378,117l1056,198l184,21l1033,-391l713,272l695,358l123,37l304,217l1308,-169l582,-227l1158,-225l823,-307l225,516l274,774l150,941l396,814l873,2427l323,1414l198,702l483,1106l325,854l-131,1140l-40,287l-31,1286l143,1392l-199,90l-1313,396l-3,380l-1684,695l-1264,48l-527,-276l-97,-67l-203,-208l-715,-280l-605,-131l-70,-286l-251,-1326l-925,-174l-604,-411l-1100,-368l-354,-92l-557,-167l-624,-237l-599,-228l-183,26l-1052,260l-898,201l-469,-676l-1359,213l-469,-1060l-902,148l-361,-344l-560,-1751l-584,-446l-1008,-341l-1205,-633l-462,-461l-661,95l-1396,1193l160,454l-54,1013l-2006,751l1795,1484l187,204l18,629l-108,189l-369,627l1186,1187l536,196l5,3l398,211l-283,718l-395,243l-1237,699l-838,354l-533,-152l-717,-673h-461l-899,-828l-501,-496l-481,-368l-1150,-713l-108,-121l-76,-165l-139,-314l-1361,-409l-545,-681l-429,-128l-688,67l-506,-467l-113,232l-905,-246l-890,813l-441,607l-792,-421l-229,24l-1365,-362l-1215,1324l-25,-50l-1772,-1236l-673,-937l-39,-14l-520,329l-750,-449l-96,866l-440,528l-1198,534l-1032,455l-223,111l-557,360l-131,1010l-852,-127l-533,552l-1421,1019l-1488,-130l-145,15l-2525,-332l-849,535l-1034,-112l-882,-380l-901,487l-248,-742l-1038,-406l-626,-473l931,-1777l-518,-1034l1187,-567l110,-1432l-168,-357l-150,-331l0,-1l-282,-732l-1604,-1403l-158,-523l-817,-744l-651,-756l-516,476l-1710,-1352l-570,-994l-1518,-743Z" fill="var(--mapa-pe)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-380121,-91560l-802,-167l-641,-774l-812,-797l227,-232l99,-637l1272,-244l745,-739l1092,-245l519,-399l1763,-865l63,-123l1936,-698l1695,-826l702,-671l925,-161l1803,-1090l51,-468l10,-51l294,-500l354,-228l322,-309l55,-104l1245,-761l188,-55l179,-4l518,186l446,-491l253,-1144l726,-88l25,13l910,-737l945,1523l418,805l2281,2133l688,1101l580,848l494,676l655,771l661,265l1652,1972l339,449l521,846l857,717l477,556l440,752l538,908l886,1508l-823,307l-1158,225l-582,227l-1308,169l-304,-217l-123,-37l-695,-358l-713,-272l-1033,391l-184,-21l-1056,-198l-378,-117l-449,-44l-949,-493l167,-600l-97,-102l-745,-169l-958,-1293l-644,-443l-470,-50l-975,-394l-1245,-690l-748,388l-971,126l-830,40l-570,-1010l-428,181l-757,519l-23,-101l-1115,518l-292,502l-309,-114l-493,744l-1171,1244l-1235,598l-62,49l-1131,-404l-607,679l-563,895l-708,-863l-1254,-1647l-605,-586Z" fill="var(--mapa-al)" stroke="#fff" stroke-width="350"/></g>
+          <g transform="scale(0.0001,-0.0001)"><path d="M-369180,-101247l-294,500l-10,51l-51,468l-1803,1090l-925,161l-702,671l-1695,826l-1936,698l-63,123l-1763,865l-519,399l-1092,245l-577,-726l575,-3171l1014,-142l1113,-1140l-111,-784l274,-333l89,-516l-31,-930l254,-492l-1044,-1051l324,-738l90,-832l-36,-883l-1626,-683l-696,563l-1028,-172l-600,74l-334,-893l280,-1311l297,-118l746,-830l591,-1558l656,-176l-129,-1442l120,-45l1491,-1344l331,-391l1270,-472l407,505l537,-341l2109,936l266,163l809,1527l1057,1280l1199,2043l1819,2131l1798,1134l1867,944l903,395l-910,737l-25,-13l-726,88l-253,1144l-446,491l-518,-186l-179,4l-188,55l-1245,761l-55,104l-322,309l-354,228Z" fill="var(--mapa-se)" stroke="#fff" stroke-width="350"/></g>
+          <text x="-41.7739" y="12.5866" font-family="Source Sans 3,Arial,sans-serif" font-size="1.2" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">BA</text>
+          <text x="-45.3670" y="4.7978" font-family="Source Sans 3,Arial,sans-serif" font-size="0.85" font-weight="800" fill="#2a4a1f" text-anchor="middle" dominant-baseline="central">MA</text>
+          <text x="-42.8239" y="7.0466" font-family="Source Sans 3,Arial,sans-serif" font-size="0.85" font-weight="800" fill="#3a4a20" text-anchor="middle" dominant-baseline="central">PI</text>
+          <text x="-39.5457" y="5.4671" font-family="Source Sans 3,Arial,sans-serif" font-size="0.85" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">CE</text>
+          <text x="-36.8092" y="6.0964" font-family="Source Sans 3,Arial,sans-serif" font-size="0.7" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="central">RN</text>
+          <text x="-36.9276" y="7.0842" font-family="Source Sans 3,Arial,sans-serif" font-size="0.7" font-weight="800" fill="#4a3a15" text-anchor="middle" dominant-baseline="central">PB</text>
+          <text x="-37.8481" y="8.2721" font-family="Source Sans 3,Arial,sans-serif" font-size="0.75" font-weight="800" fill="#5a3a10" text-anchor="middle" dominant-baseline="central">PE</text>
+          <text x="-36.6737" y="9.4510" font-family="Source Sans 3,Arial,sans-serif" font-size="0.6" font-weight="800" fill="#4a2040" text-anchor="middle" dominant-baseline="central">AL</text>
+          <text x="-37.4436" y="10.4955" font-family="Source Sans 3,Arial,sans-serif" font-size="0.6" font-weight="800" fill="#1a3a5a" text-anchor="middle" dominant-baseline="central">SE</text>
+        </svg>
+      </div>
+
+      <div class="mapa-legenda">
+        <h4>Projetos por Estado</h4>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-ba)"></span><span class="leg-name">Bahia</span></div><span class="leg-num">18</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:100%;background:var(--mapa-ba)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-ma)"></span><span class="leg-name">Maranhão</span></div><span class="leg-num">8</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:44%;background:var(--mapa-ma)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-ce)"></span><span class="leg-name">Ceará</span></div><span class="leg-num">6</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:33%;background:var(--mapa-ce)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-rn)"></span><span class="leg-name">Rio Grande do Norte</span></div><span class="leg-num">5</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:28%;background:var(--mapa-rn)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-pb)"></span><span class="leg-name">Paraíba</span></div><span class="leg-num">4</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:22%;background:var(--mapa-pb)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-pi)"></span><span class="leg-name">Piauí</span></div><span class="leg-num">4</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:22%;background:var(--mapa-pi)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-al)"></span><span class="leg-name">Alagoas</span></div><span class="leg-num">3</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:17%;background:var(--mapa-al)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-pe)"></span><span class="leg-name">Pernambuco</span></div><span class="leg-num">3</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:17%;background:var(--mapa-pe)"></div></div>
+        <div class="leg-item"><div class="leg-left"><span class="leg-dot" style="background:var(--mapa-se)"></span><span class="leg-name">Sergipe</span></div><span class="leg-num">2</span></div>
+        <div class="leg-bar-bg"><div class="leg-bar" style="width:11%;background:var(--mapa-se)"></div></div>
+        <div class="leg-total"><span>TOTAL</span><span>53</span></div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card"><div class="card-tag">Bahia — 18 projetos</div><h4>Maior concentração do Nordeste</h4><p>Pesquisa em agroecologia, participação social nos CODETERs e fortalecimento de cadeias produtivas no semiárido baiano.</p></div>
+      <div class="card"><div class="card-tag">Maranhão — 8 projetos</div><h4>Extensão e povos tradicionais</h4><p>Projetos focados em comunidades quilombolas, quebradeiras de coco e agricultura de base familiar.</p></div>
+      <div class="card"><div class="card-tag">CE / RN / PB / PI — 19 projetos</div><h4>Semiárido e convivência</h4><p>Tecnologias sociais de convivência com o semiárido, acesso à água e segurança alimentar nos territórios.</p></div>
+      <div class="card"><div class="card-tag">AL / PE / SE — 8 projetos</div><h4>Articulação territorial</h4><p>Pesquisa em governança participativa, Zona da Mata e dinâmicas territoriais no litoral e agreste.</p></div>
+    </div>
+
+    <div class="tags-row">
+      <span class="tag">PNDTS</span>
+      <span class="tag">PAS Nordeste</span>
+      <span class="tag">CNPq</span>
+      <span class="tag">Extensão Rural</span>
+      <span class="tag">CODETERs</span>
+    </div>
+  </div>
+
+  <!-- VOZES DO CAMPO -->
+  <div class="section vozes">
+    <div class="sec-header">
+      <div class="sec-label">Vozes do Campo</div>
+      <div class="sec-title">Quem Faz o Território</div>
+    </div>
+    <div class="depoimento">
+      <div class="dep-foto"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="dep-text">
+        <blockquote>"[Placeholder] O território é onde a gente vive, planta, cria os filhos. O CODETER nos deu voz pra dizer o que a gente precisa de verdade."</blockquote>
+        <div class="dep-author">[Nome do Depoente]</div>
+        <div class="dep-role">[Cargo/Localidade] — Território [Nome], [UF]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TED PARCERIA -->
+  <div class="ted-box">
+    <h3>TED de Parceria Institucional</h3>
+    <div class="ted-sub">Termo de Execução Descentralizada entre MDA e órgãos parceiros para fortalecer a infraestrutura dos territórios rurais e a governança territorial.</div>
+    <div class="ted-grid">
+      <div class="ted-item"><div class="n">R$ 2,4M</div><div class="l">Valor Total</div></div>
+      <div class="ted-item"><div class="n">12</div><div class="l">Territórios Atendidos</div></div>
+      <div class="ted-item"><div class="n">6</div><div class="l">Metas / TED</div></div>
+      <div class="ted-item"><div class="n">SIT</div><div class="l">+ Colheita Digital</div></div>
+    </div>
+  </div>
+
+  <!-- AGENDA -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-label">Próximos Eventos</div>
+      <div class="sec-title">Agenda Territorial</div>
+    </div>
+    <div class="ag-list">
+      <div class="ag-item">
+        <div class="ag-date"><span class="d">15</span><span class="m">Mai</span></div>
+        <div class="ag-info"><h4>[Placeholder] Reunião Nacional dos CODETERs</h4><p>Brasília/DF — Plenário do CONDRAF</p></div>
+        <span class="ag-badge">Presencial</span>
+      </div>
+      <div class="ag-item">
+        <div class="ag-date"><span class="d">22</span><span class="m">Mai</span></div>
+        <div class="ag-info"><h4>[Placeholder] Prazo — Chamada CNPq 18/2026</h4><p>Submissão de projetos de extensão territorial</p></div>
+        <span class="ag-badge">Online</span>
+      </div>
+      <div class="ag-item">
+        <div class="ag-date"><span class="d">30</span><span class="m">Mai</span></div>
+        <div class="ag-info"><h4>[Placeholder] Webinar: Colheita Digital</h4><p>Resultados parciais do SIT nos territórios</p></div>
+        <span class="ag-badge">Online</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section cta-section">
+    <div class="sec-header">
+      <div class="sec-label">Participe</div>
+      <div class="sec-title">Como Participar</div>
+    </div>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <div class="cta-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <strong>CODETERs e Lideranças</strong>
+        <p>Participe das reuniões do colegiado. Acesse o SIT: territoriosdacidadania.mda.gov.br</p>
+      </div>
+      <div class="cta-card">
+        <div class="cta-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></div>
+        <strong>Pesquisadores</strong>
+        <p>Acompanhe chamadas CNPq e TEDs vinculados ao PAS Nordeste e ao PNDTS.</p>
+      </div>
+      <div class="cta-card">
+        <div class="cta-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--verde-1)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg></div>
+        <strong>Gestores Públicos</strong>
+        <p>Fortaleça PAA, PNAE, ATER e Plano Safra na agenda do seu território.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-faixa"></div>
+    <div class="footer-inner">
+      <div class="ft-top">
+        <div class="ft-logo">
+          <img src="../../assets/logos/logo-mapa.png" alt="Logo Territórios da Cidadania">
+          <span class="ft-logo-text">Território em <em>Foco</em></span>
+        </div>
+        <div class="ft-social"><a href="#" title="Instagram">IG</a><a href="#" title="X">X</a><a href="#" title="Facebook">FB</a><a href="#" title="YouTube">YT</a></div>
+      </div>
+      <div class="ft-contact"><a href="mailto:cgdt@mda.gov.br">cgdt@mda.gov.br</a> — Coordenação-Geral de Desenvolvimento Territorial</div>
+      <div class="ft-sources">Fontes: IBGE (malha municipal 2022), CNPq/SGPR (Chamada 17/2025), MDA/SFDT (SIT, CONDRAF), Portaria MDA nº 35/2025.</div>
+      <div class="ft-gov">
+        <span class="ft-gov-marca">GOVERNO FEDERAL</span>
+        <span class="ft-gov-text">Ministério do Desenvolvimento Agrário e Agricultura Familiar &middot; Secretaria de Fortalecimento e Desenvolvimento Territorial &middot; Coordenação-Geral de Desenvolvimento Territorial</span>
+      </div>
+      <div class="ft-bottom">
+        <span>&copy; 2026 MDA/SFDT. Distribuição livre para fins institucionais.</span>
+        <span>Território em Foco &middot; Edição 01</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
