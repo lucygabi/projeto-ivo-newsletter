@@ -75,7 +75,10 @@ p,
 .vozes-quote,
 .agenda-info p,
 .timeline-desc,
-.ted-label {
+.ted-label,
+.cpdt-intro,
+.ted-intro,
+.cpdt-card p {
   text-align: justify;
 }
 
@@ -558,6 +561,16 @@ p,
   pointer-events: none;
 }
 
+.cpdt-intro {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--texto);
+  margin-bottom: 32px;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
 .cpdt-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -598,6 +611,13 @@ p,
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.cpdt-card p {
+  font-size: 15px;
+  color: var(--texto-leve);
+  line-height: 1.5;
 }
 
 /* ==============================
@@ -920,6 +940,13 @@ p,
   font-size: 16px;
   font-weight: 500;
   opacity: 0.75;
+  margin-bottom: 24px;
+}
+
+.ted-card .ted-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.92;
   margin-bottom: 32px;
 }
 
@@ -1297,11 +1324,23 @@ p,
     padding-right: 32px;
   }
 
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .numeros-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .eixos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .eco-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eco-grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1310,6 +1349,10 @@ p,
   }
 
   .ted-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1360,7 +1403,7 @@ p,
   }
 
   .timeline-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .eixos-grid {
@@ -1388,7 +1431,7 @@ p,
   }
 
   .areas-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .articulacao-grid {
@@ -1396,7 +1439,7 @@ p,
   }
 
   .ted-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .cta-grid {
@@ -1504,6 +1547,14 @@ p,
       <h3>O que é o PNDTS?</h3>
       <p>A Política Nacional de Desenvolvimento Territorial Sustentável é o marco estratégico que reorganiza a ação do Estado nos territórios rurais brasileiros. Construída de forma participativa, ela articula crédito, assistência técnica, reforma agrária, compras públicas e infraestrutura em torno de uma unidade territorial definida, com governança compartilhada entre governo e sociedade civil.</p>
       <div class="ref">Resolução CONDRAF n. 16/2024 &middot; Portaria MDA n. 35/2025</div>
+    </div>
+
+    <div class="destaque-card" style="margin-top: 24px;">
+      <img class="caixa-deco" src="assets/mda/caixa-verde.png" alt="">
+      <h3>O que são os Territórios da Cidadania?</h3>
+      <p>Os Territórios da Cidadania são o recorte de referência para o planejamento, a articulação e a participação social. É nesses espaços que as políticas públicas e as ações de desenvolvimento territorial sustentável são articuladas, debatidas e encaminhadas pelos Colegiados de Desenvolvimento Territorial.</p>
+      <p>São espaços geográficos contínuos, urbanos e rurais, definidos por critérios ambientais, econômicos, sociais, culturais e políticos, que reúnem grupos sociais diversos, conectados por elementos de identidade e coesão social, cultural e territorial.</p>
+      <div class="ref">Resolução CONDRAF nº 16/2024 (atualizada pela Res. nº 40/2025) &middot; Portaria MDA nº 35/2025</div>
     </div>
 
     <div class="objectives-list">
@@ -1639,15 +1690,18 @@ p,
   <!-- 9. CPDT -->
   <div class="cpdt-section">
     <img class="caixa-bg" src="assets/mda/caixa-verde.png" alt="">
-    <h2 class="section-title">CPDT, Comitê Permanente</h2>
+    <h2 class="section-title">O que é o CPDT?</h2>
+    <p class="cpdt-intro">O Comitê Permanente de Desenvolvimento Territorial (CPDT) é uma instância estratégica vinculada ao CONDRAF. Atua como o braço executivo responsável por tirar o PNDTS do papel e transformá-lo em ação, o motor que transforma as leis em soluções práticas, garantindo que a gestão pública ouça e atenda quem realmente vive no território.</p>
     <div class="cpdt-grid">
       <div class="cpdt-card gov">
         <div class="cpdt-pct">50%</div>
         <h4>Governo</h4>
+        <p>MDA/SFDT, órgãos federais e Superintendências Estaduais do MDA</p>
       </div>
       <div class="cpdt-card soc">
         <div class="cpdt-pct">50%</div>
         <h4>Sociedade Civil</h4>
+        <p>Movimentos sociais, agricultores familiares e comunidades tradicionais</p>
       </div>
     </div>
   </div>
@@ -1858,6 +1912,7 @@ p,
     <div class="ted-card">
       <h3>TED: O Motor de Planejamento Territorial</h3>
       <div class="ted-sub">MDA + UnB (Cegafi / PCTec)</div>
+      <p class="ted-intro">Uma das iniciativas mais promissoras de 2026 é a parceria entre o Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA) e a Universidade de Brasília (UnB), através do Centro de Gestão e Estudos Estratégicos (Cegafi). O projeto integra o Sistema de Informações Territoriais (SIT) com a plataforma Colheita Digital, criando um ecossistema informacional robusto para gestão territorial.</p>
       <div class="ted-stats">
         <div class="ted-stat">
           <div class="ted-num">R$ 12,4M</div>
