@@ -66,7 +66,7 @@ p,
 .editorial-text,
 .pas-intro,
 .destaque-card p,
-.objective-item p,
+.objective-card p,
 .eixo-card p,
 .eco-card p,
 .regional-card p,
@@ -343,51 +343,43 @@ p,
   letter-spacing: 0.5px;
 }
 
-/* Objectives as editorial numbered list */
-.objectives-list {
-  display: flex;
-  flex-direction: column;
+/* Objectives as square cards grid */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
 
-.objective-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 26px 30px;
+.objective-card {
+  background: #e8f5e9;
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
   box-shadow: var(--shadow);
 }
 
-.objective-num {
-  flex-shrink: 0;
+.objective-card .objective-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 36px;
+  font-weight: 900;
   color: var(--verde-escuro);
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--verde-escuro);
-  border-radius: 8px;
-  margin-top: 2px;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
-.objective-item h4 {
+.objective-card h4 {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  margin-bottom: 4px;
   color: var(--texto);
+  margin-bottom: 6px;
+  line-height: 1.3;
 }
 
-.objective-item p {
-  font-size: 16px;
+.objective-card p {
+  font-size: 13px;
   color: var(--texto-leve);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* ==============================
@@ -1061,19 +1053,13 @@ p,
   background: #fff;
 }
 
-.agenda-list {
+.agenda-card-unico {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.agenda-item {
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
   background: var(--fundo-cinza);
   border-radius: var(--radius);
-  padding: 24px 28px;
+  padding: 32px 36px;
   box-shadow: var(--shadow);
 }
 
@@ -1085,7 +1071,7 @@ p,
 
 .agenda-date .dia {
   font-family: 'Poppins', sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 900;
   color: var(--verde-escuro);
   line-height: 1;
@@ -1102,22 +1088,41 @@ p,
 
 .agenda-divider {
   width: 2px;
-  height: 44px;
+  align-self: stretch;
   background: #ddd;
   flex-shrink: 0;
 }
 
 .agenda-info h4 {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--texto);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.agenda-info p {
-  font-size: 15px;
+.agenda-meta {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
   color: var(--texto-leve);
+  margin-bottom: 16px;
+}
+
+.agenda-pauta p {
+  font-size: 15px;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+
+.agenda-pauta ol {
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+.agenda-pauta li {
+  margin-bottom: 4px;
 }
 
 /* ==============================
@@ -1328,6 +1333,10 @@ p,
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .objectives-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .numeros-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1400,6 +1409,10 @@ p,
 
   .section-title {
     font-size: 28px;
+  }
+
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .timeline-grid {
@@ -1544,54 +1557,37 @@ p,
     <h2 class="section-title">2026: O Ano da Consolidação</h2>
     <div class="destaque-card">
       <img class="caixa-deco" src="assets/mda/caixa-verde.png" alt="">
-      <h3>O que é o PNDTS?</h3>
-      <p>A Política Nacional de Desenvolvimento Territorial Sustentável é o marco estratégico que reorganiza a ação do Estado nos territórios rurais brasileiros. Construída de forma participativa, ela articula crédito, assistência técnica, reforma agrária, compras públicas e infraestrutura em torno de uma unidade territorial definida, com governança compartilhada entre governo e sociedade civil.</p>
-      <div class="ref">Resolução CONDRAF n. 16/2024 &middot; Portaria MDA n. 35/2025</div>
-    </div>
-
-    <div class="destaque-card" style="margin-top: 24px;">
-      <img class="caixa-deco" src="assets/mda/caixa-verde.png" alt="">
       <h3>O que são os Territórios da Cidadania?</h3>
       <p>Os Territórios da Cidadania são o recorte de referência para o planejamento, a articulação e a participação social. É nesses espaços que as políticas públicas e as ações de desenvolvimento territorial sustentável são articuladas, debatidas e encaminhadas pelos Colegiados de Desenvolvimento Territorial.</p>
       <p>São espaços geográficos contínuos, urbanos e rurais, definidos por critérios ambientais, econômicos, sociais, culturais e políticos, que reúnem grupos sociais diversos, conectados por elementos de identidade e coesão social, cultural e territorial.</p>
       <div class="ref">Resolução CONDRAF nº 16/2024 (atualizada pela Res. nº 40/2025) &middot; Portaria MDA nº 35/2025</div>
     </div>
 
-    <div class="objectives-list">
-      <div class="objective-item">
+    <div class="objectives-grid">
+      <div class="objective-card">
         <div class="objective-num">1</div>
-        <div>
-          <h4>Alimentos saudáveis</h4>
-          <p>Produção de base agroecológica e soberania alimentar</p>
-        </div>
+        <h4>Alimentos saudáveis</h4>
+        <p>Produção agroecológica e soberania alimentar</p>
       </div>
-      <div class="objective-item">
+      <div class="objective-card">
         <div class="objective-num">2</div>
-        <div>
-          <h4>Adaptação às mudanças climáticas</h4>
-          <p>Resiliência e sustentabilidade nos territórios rurais</p>
-        </div>
+        <h4>Adaptação climática</h4>
+        <p>Resiliência nos territórios rurais</p>
       </div>
-      <div class="objective-item">
+      <div class="objective-card">
         <div class="objective-num">3</div>
-        <div>
-          <h4>Redução da pobreza rural</h4>
-          <p>Inclusão produtiva e geração de renda no campo</p>
-        </div>
+        <h4>Redução da pobreza</h4>
+        <p>Inclusão produtiva e renda no campo</p>
       </div>
-      <div class="objective-item">
+      <div class="objective-card">
         <div class="objective-num">4</div>
-        <div>
-          <h4>Ampliação do acesso a políticas públicas</h4>
-          <p>PRONAF, ATER, PAA, PNAE e Plano Safra</p>
-        </div>
+        <h4>Acesso a políticas</h4>
+        <p>PRONAF, ATER, PAA, PNAE e Plano Safra</p>
       </div>
-      <div class="objective-item">
+      <div class="objective-card">
         <div class="objective-num">5</div>
-        <div>
-          <h4>Promoção do bem viver no campo</h4>
-          <p>Qualidade de vida, cultura e identidade territorial</p>
-        </div>
+        <h4>Bem viver no campo</h4>
+        <p>Qualidade de vida, cultura e identidade</p>
       </div>
     </div>
   </div>
@@ -1958,38 +1954,21 @@ p,
   <!-- 18. AGENDA -->
   <div class="agenda-section">
     <h2 class="section-title">Agenda</h2>
-    <div class="agenda-list">
-      <div class="agenda-item">
-        <div class="agenda-date">
-          <div class="dia">15</div>
-          <div class="mes">Mai</div>
-        </div>
-        <div class="agenda-divider"></div>
-        <div class="agenda-info">
-          <h4>Reunião CODETERs</h4>
-          <p>Encontro nacional dos Colegiados de Desenvolvimento Territorial</p>
-        </div>
+    <div class="agenda-card-unico">
+      <div class="agenda-date">
+        <div class="dia">24</div>
+        <div class="mes">Abr</div>
       </div>
-      <div class="agenda-item">
-        <div class="agenda-date">
-          <div class="dia">22</div>
-          <div class="mes">Mai</div>
-        </div>
-        <div class="agenda-divider"></div>
-        <div class="agenda-info">
-          <h4>CNPq 18/2026</h4>
-          <p>Lançamento da nova chamada pública para projetos de extensão territorial</p>
-        </div>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date">
-          <div class="dia">30</div>
-          <div class="mes">Mai</div>
-        </div>
-        <div class="agenda-divider"></div>
-        <div class="agenda-info">
-          <h4>Webinar Colheita Digital</h4>
-          <p>Apresentação da plataforma de monitoramento e gestão territorial</p>
+      <div class="agenda-divider"></div>
+      <div class="agenda-info">
+        <h4>Reunião do CPDT</h4>
+        <p class="agenda-meta">24 de abril de 2026 &middot; 09h00 &middot; Online (link de acesso será encaminhado previamente)</p>
+        <div class="agenda-pauta">
+          <p><strong>Pauta:</strong></p>
+          <ol>
+            <li>Redação final e validação do Guia de Homologação e Reconfiguração de Territórios</li>
+            <li>Aprovação do Plano de Trabalho do CPDT 2026</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -2018,7 +1997,6 @@ p,
   <!-- 20. FOTO EVENTO - foto coletiva -->
   <div class="foto-evento top-space">
     <img src="assets/fotos/foto-coletiva.jpeg" alt="Foto coletiva dos participantes">
-    <p class="foto-caption">Participantes da Plenária Nacional dos Territórios da Cidadania, Brasília, 2025</p>
   </div>
 
   <!-- 21. FOOTER -->
