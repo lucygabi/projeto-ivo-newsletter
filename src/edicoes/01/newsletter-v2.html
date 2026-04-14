@@ -1303,10 +1303,38 @@ p,
 }
 
 /* ==============================
-   RESPONSIVE
+   RESPONSIVE — 5 BREAKPOINTS
    ============================== */
 
-/* --- Tablet: 768px a 1024px --- */
+/* --- 4. NOTEBOOK: 1025px a 1366px --- */
+@media (max-width: 1366px) {
+  .hero,
+  .editorial,
+  .timeline-section,
+  .destaque-pndts,
+  .eixos-section,
+  .ecossistema-section,
+  .cpdt-section,
+  .foto-evento,
+  .numeros-section,
+  .pas-section,
+  .areas-section,
+  .articulacao-section,
+  .ted-section,
+  .vozes-section,
+  .agenda-section,
+  .cta-section,
+  .footer {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  body { font-size: 18px; }
+  .section-title { font-size: 40px; }
+  .hero-title { font-size: 64px; }
+}
+
+/* --- 3. TABLET: 769px a 1024px --- */
 @media (max-width: 1024px) {
   .hero,
   .editorial,
@@ -1329,50 +1357,37 @@ p,
     padding-right: 32px;
   }
 
-  .timeline-grid {
-    grid-template-columns: repeat(2, 1fr);
+  body { font-size: 17px; }
+  .section-title { font-size: 36px; }
+  .hero-title { font-size: 52px; }
+
+  .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+  .objectives-grid { grid-template-columns: repeat(3, 1fr); }
+  .numeros-grid { grid-template-columns: repeat(3, 1fr); }
+  .eixos-grid { grid-template-columns: repeat(3, 1fr); }
+  .eco-grid { grid-template-columns: repeat(2, 1fr); }
+  .eco-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+  .articulacao-grid { grid-template-columns: repeat(2, 1fr); }
+  .ted-stats { grid-template-columns: repeat(2, 1fr); }
+  .cta-grid { grid-template-columns: repeat(3, 1fr); }
+  .regional-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .foto-evento img {
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+    object-position: top center;
   }
 
-  .objectives-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .numeros-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .eixos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .eco-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .eco-grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .areas-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ted-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cta-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-title {
-    font-size: 56px;
+  .hero-logo-panel img {
+    width: 300px;
+    min-width: 240px;
   }
 }
 
-/* --- Celular: abaixo de 768px --- */
+/* --- 2. CELULAR GRANDE: 481px a 768px --- */
 @media (max-width: 768px) {
-  /* Paddings laterais */
   .hero,
   .editorial,
   .timeline-section,
@@ -1394,7 +1409,10 @@ p,
     padding-right: 20px;
   }
 
-  /* PROBLEMA 1 + 7 + 8: textos left no celular */
+  body { font-size: 16px; }
+  .section-title { font-size: 32px; }
+
+  /* Textos: left no celular */
   p,
   blockquote,
   .editorial-text,
@@ -1424,33 +1442,29 @@ p,
     padding-bottom: 48px;
   }
 
-  .hero-title {
-    font-size: 42px;
-  }
+  .hero-title { font-size: 42px; }
 
   .hero-logo-panel img {
     width: 260px;
     min-width: 200px;
   }
 
-  .section-title {
-    font-size: 28px;
-  }
+  /* Grids: 1 ou 2 colunas */
+  .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+  .objectives-grid { grid-template-columns: repeat(2, 1fr); }
+  .numeros-grid { grid-template-columns: repeat(2, 1fr); }
+  .eixos-grid { grid-template-columns: 1fr; }
+  .eco-grid { grid-template-columns: repeat(2, 1fr); }
+  .eco-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+  .articulacao-grid { grid-template-columns: 1fr; }
+  .ted-stats { grid-template-columns: repeat(2, 1fr); }
+  .cta-grid { grid-template-columns: 1fr; }
+  .cpdt-grid { grid-template-columns: 1fr; }
+  .regional-grid { grid-template-columns: 1fr; }
+  .mapa-container { grid-template-columns: 1fr; }
 
-  /* PROBLEMA 2: objetivos 1 coluna */
-  .objectives-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* PROBLEMA 6: eixos 1 coluna, ícone + texto lado a lado */
-  .eixos-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* Eixos: ícone + texto lado a lado */
   .eixo-card {
     display: flex;
     align-items: center;
@@ -1464,50 +1478,10 @@ p,
     flex-shrink: 0;
   }
 
-  .eco-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .eco-grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .numeros-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .mapa-container {
-    grid-template-columns: 1fr;
-  }
-
-  .regional-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .areas-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .articulacao-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* PROBLEMA 3: TED 2 colunas no celular */
-  .ted-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cta-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cpdt-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-number {
-    font-size: 36px;
-  }
+  .stat-number { font-size: 36px; }
+  .timeline-year { font-size: 36px; }
+  .cpdt-pct { font-size: 48px; }
+  .numero-card { padding: 24px 14px; }
 
   .vozes-content {
     flex-direction: column;
@@ -1515,19 +1489,7 @@ p,
     text-align: center;
   }
 
-  .timeline-year {
-    font-size: 36px;
-  }
-
-  .cpdt-pct {
-    font-size: 48px;
-  }
-
-  .numero-card {
-    padding: 24px 14px;
-  }
-
-  /* PROBLEMA 4: fotos proporcionais no celular */
+  /* Fotos */
   .foto-evento img {
     height: auto;
     max-height: 250px;
@@ -1537,11 +1499,9 @@ p,
     border-radius: 12px;
   }
 
-  .editorial .editorial-text {
-    font-size: 18px;
-  }
+  .editorial .editorial-text { font-size: 17px; }
 
-  /* Agenda card responsivo */
+  /* Agenda responsivo */
   .agenda-card-unico {
     flex-direction: column;
     gap: 16px;
@@ -1560,6 +1520,108 @@ p,
     gap: 8px;
     width: auto;
   }
+}
+
+/* --- 1. CELULAR PEQUENO: até 480px --- */
+@media (max-width: 480px) {
+  .hero,
+  .editorial,
+  .timeline-section,
+  .destaque-pndts,
+  .eixos-section,
+  .ecossistema-section,
+  .cpdt-section,
+  .foto-evento,
+  .numeros-section,
+  .pas-section,
+  .areas-section,
+  .articulacao-section,
+  .ted-section,
+  .vozes-section,
+  .agenda-section,
+  .cta-section,
+  .footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  body { font-size: 15px; }
+  .section-title { font-size: 24px; }
+  .hero-title { font-size: 32px; letter-spacing: 1px; }
+
+  .hero {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .hero-logo-panel {
+    padding: 16px 24px;
+  }
+
+  .hero-logo-panel img {
+    width: 220px;
+    min-width: 180px;
+  }
+
+  .hero-subtitle { font-size: 16px; }
+  .hero .label-edicao { font-size: 13px; letter-spacing: 2px; }
+
+  /* Todos os grids: 1 coluna */
+  .timeline-grid { grid-template-columns: 1fr; }
+  .objectives-grid { grid-template-columns: 1fr; }
+  .numeros-grid { grid-template-columns: repeat(2, 1fr); }
+  .eixos-grid { grid-template-columns: 1fr; }
+  .eco-grid { grid-template-columns: 1fr; }
+  .eco-grid-3 { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: 1fr; }
+  .articulacao-grid { grid-template-columns: 1fr; }
+  .ted-stats { grid-template-columns: repeat(2, 1fr); }
+  .cta-grid { grid-template-columns: 1fr; }
+  .cpdt-grid { grid-template-columns: 1fr; }
+  .regional-grid { grid-template-columns: 1fr; }
+
+  .stat-number { font-size: 32px; }
+  .timeline-year { font-size: 32px; }
+  .cpdt-pct { font-size: 40px; }
+  .numero-card { padding: 20px 12px; }
+  .destaque-card { padding: 32px 24px; }
+  .destaque-card h3 { font-size: 22px; }
+  .destaque-card p { font-size: 15px; }
+
+  .objective-card { padding: 20px 14px; }
+  .objective-card .objective-num { font-size: 28px; }
+  .objective-card h4 { font-size: 14px; }
+  .objective-card p { font-size: 13px; }
+
+  .editorial .editorial-text { font-size: 16px; }
+  .editorial .quote-mark { font-size: 72px; }
+
+  .eco-badge span { font-size: 14px; padding: 12px 24px; }
+
+  .ted-card { padding: 32px 24px; }
+  .ted-card h3 { font-size: 22px; }
+  .ted-stat .ted-num { font-size: 22px; }
+  .ted-stat .ted-label { font-size: 13px; }
+  .ted-intro { font-size: 15px; }
+
+  .vozes-quote { font-size: 17px; }
+  .vozes-avatar { width: 72px; height: 72px; }
+
+  /* Fotos menores */
+  .foto-evento img {
+    max-height: 200px;
+    border-radius: 10px;
+  }
+
+  .footer { padding-top: 36px; padding-bottom: 28px; }
+  .footer-logo-panel img { width: 180px; }
+  .footer-brand span { font-size: 17px; }
+  .footer-social a { width: 38px; height: 38px; }
+
+  .agenda-card-unico { padding: 20px 16px; }
+  .agenda-date .dia { font-size: 32px; }
+  .agenda-info h4 { font-size: 17px; }
+  .agenda-pauta ol { font-size: 14px; }
 }
 </style>
 </head>
