@@ -1,0 +1,158 @@
+# File extensions eligible for grammar scanning
+# Single source of truth for which files the grammar squad processes
+version: "1.0.0"
+description: "Defines which file types are eligible for grammar scanning and how they should be processed"
+
+eligible_extensions:
+  - ext: ".md"
+    mime: "text/markdown"
+    processing: "full"
+    description: "Markdown files — full text processing with code block exclusion"
+    priority: 1
+
+  - ext: ".mdx"
+    mime: "text/mdx"
+    processing: "full"
+    description: "MDX files — full text processing, skip JSX/TSX blocks"
+    priority: 1
+
+  - ext: ".yaml"
+    mime: "text/yaml"
+    processing: "strings_only"
+    description: "YAML files — process string values only, skip keys and technical values"
+    priority: 2
+
+  - ext: ".yml"
+    mime: "text/yaml"
+    processing: "strings_only"
+    description: "YML files — same as .yaml"
+    priority: 2
+
+  - ext: ".json"
+    mime: "application/json"
+    processing: "values_only"
+    description: "JSON files — process human-readable string values only"
+    priority: 3
+
+  - ext: ".txt"
+    mime: "text/plain"
+    processing: "full"
+    description: "Plain text files — full text processing"
+    priority: 1
+
+  - ext: ".html"
+    mime: "text/html"
+    processing: "text_nodes_only"
+    description: "HTML files — process visible text nodes only, skip tags and attributes"
+    priority: 2
+
+  - ext: ".htm"
+    mime: "text/html"
+    processing: "text_nodes_only"
+    description: "HTM files — same as .html"
+    priority: 2
+
+  - ext: ".rst"
+    mime: "text/x-rst"
+    processing: "full"
+    description: "reStructuredText files — full text processing with directive exclusion"
+    priority: 2
+
+  - ext: ".adoc"
+    mime: "text/asciidoc"
+    processing: "full"
+    description: "AsciiDoc files — full text processing"
+    priority: 2
+
+  - ext: ".tex"
+    mime: "text/x-tex"
+    processing: "full"
+    description: "LaTeX files — process text content, skip commands and math"
+    priority: 3
+
+  - ext: ".csv"
+    mime: "text/csv"
+    processing: "values_only"
+    description: "CSV files — process cell values that appear to be natural language"
+    priority: 3
+
+  - ext: ".po"
+    mime: "text/x-gettext-translation"
+    processing: "msgstr_only"
+    description: "PO translation files — process msgstr values only"
+    priority: 1
+
+  - ext: ".properties"
+    mime: "text/x-java-properties"
+    processing: "values_only"
+    description: "Properties files — process values only, skip keys"
+    priority: 3
+
+  - ext: ".xml"
+    mime: "text/xml"
+    processing: "text_nodes_only"
+    description: "XML files — process text content only, skip tags and attributes"
+    priority: 3
+
+processing_modes:
+  full:
+    description: "Process all text content"
+    excludes: "Code blocks, front matter, URLs, template variables"
+
+  strings_only:
+    description: "Process only quoted string values"
+    excludes: "Keys, numeric values, boolean values, technical identifiers"
+
+  values_only:
+    description: "Process human-readable string values"
+    excludes: "Keys, numeric/boolean values, URLs, file paths, identifiers"
+
+  text_nodes_only:
+    description: "Process visible text content in markup"
+    excludes: "Tags, attributes, scripts, styles, comments"
+
+  msgstr_only:
+    description: "Process translated message strings only"
+    excludes: "msgid (source), comments, metadata headers"
+
+exclude_patterns:
+  directories:
+    - "node_modules/"
+    - ".git/"
+    - ".aiox-core/"
+    - "dist/"
+    - "build/"
+    - ".next/"
+    - "__pycache__/"
+    - ".cache/"
+    - "coverage/"
+    - ".nyc_output/"
+    - "vendor/"
+    - ".venv/"
+    - "venv/"
+    - "env/"
+    - ".tox/"
+    - ".eggs/"
+    - "target/"
+    - "out/"
+    - ".output/"
+    - ".nuxt/"
+    - ".svelte-kit/"
+    - ".turbo/"
+    - ".vercel/"
+    - ".netlify/"
+
+  files:
+    - "package-lock.json"
+    - "yarn.lock"
+    - "pnpm-lock.yaml"
+    - "composer.lock"
+    - "Gemfile.lock"
+    - "Cargo.lock"
+    - "poetry.lock"
+    - "*.min.js"
+    - "*.min.css"
+    - "*.map"
+    - "*.d.ts"
+    - ".env"
+    - ".env.*"

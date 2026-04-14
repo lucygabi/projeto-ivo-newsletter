@@ -1,0 +1,291 @@
+# Common EN-UK corrections dictionary
+# British English corrections and style guide
+version: "1.0.0"
+variant: en-uk
+standard: "British English (Oxford Style Manual)"
+description: "Spelling, grammar, and style corrections for British English"
+
+corrections:
+
+  # === Spelling: -ise vs -ize ===
+  - incorrect: "organize"
+    correct: "organise"
+    rule: "EN-UK prefers -ise suffix (Oxford allows -ize but -ise is more common)"
+    category: spelling
+    note: "Oxford style accepts -ize but -ise is predominant in most UK publications"
+
+  - incorrect: "realize"
+    correct: "realise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "recognize"
+    correct: "recognise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "optimize"
+    correct: "optimise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "customize"
+    correct: "customise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "minimize"
+    correct: "minimise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "maximize"
+    correct: "maximise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "authorize"
+    correct: "authorise"
+    rule: "EN-UK prefers -ise suffix"
+    category: spelling
+
+  - incorrect: "analyze"
+    correct: "analyse"
+    rule: "EN-UK uses -yse suffix (never -yze)"
+    category: spelling
+
+  - incorrect: "paralyze"
+    correct: "paralyse"
+    rule: "EN-UK uses -yse suffix (never -yze)"
+    category: spelling
+
+  # === Spelling: -our vs -or ===
+  - incorrect: "color"
+    correct: "colour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  - incorrect: "favor"
+    correct: "favour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  - incorrect: "behavior"
+    correct: "behaviour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  - incorrect: "honor"
+    correct: "honour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  - incorrect: "humor"
+    correct: "humour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  - incorrect: "labor"
+    correct: "labour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  - incorrect: "neighbor"
+    correct: "neighbour"
+    rule: "EN-UK uses -our spelling"
+    category: spelling
+
+  # === Spelling: -re vs -er ===
+  - incorrect: "center"
+    correct: "centre"
+    rule: "EN-UK uses -re ending"
+    category: spelling
+
+  - incorrect: "theater"
+    correct: "theatre"
+    rule: "EN-UK uses -re ending"
+    category: spelling
+
+  - incorrect: "meter"
+    correct: "metre"
+    rule: "EN-UK uses -re ending for the unit of measurement"
+    category: spelling
+    context: "For measurement unit. 'Meter' is valid for a measuring device."
+
+  - incorrect: "liter"
+    correct: "litre"
+    rule: "EN-UK uses -re ending"
+    category: spelling
+
+  - incorrect: "fiber"
+    correct: "fibre"
+    rule: "EN-UK uses -re ending"
+    category: spelling
+
+  # === Spelling: other differences ===
+  - incorrect: "defense"
+    correct: "defence"
+    rule: "EN-UK uses -ce spelling for noun"
+    category: spelling
+
+  - incorrect: "offense"
+    correct: "offence"
+    rule: "EN-UK uses -ce spelling for noun"
+    category: spelling
+
+  - incorrect: "license"
+    correct: "licence"
+    rule: "EN-UK uses -ce for noun, -se for verb (to license)"
+    category: spelling
+    context: "Noun form. Verb form is 'to license'."
+
+  - incorrect: "practice"
+    correct: "practise"
+    rule: "EN-UK uses -se for verb (to practise), -ce for noun (a practice)"
+    category: spelling
+    context: "Verb form. Noun form is 'practice'."
+
+  - incorrect: "catalog"
+    correct: "catalogue"
+    rule: "EN-UK uses -ue ending"
+    category: spelling
+
+  - incorrect: "dialog"
+    correct: "dialogue"
+    rule: "EN-UK uses -ue ending"
+    category: spelling
+
+  - incorrect: "program"
+    correct: "programme"
+    rule: "EN-UK uses 'programme' for plans/events"
+    category: spelling
+    context: "For events/plans. 'Program' is valid for computer programs."
+
+  - incorrect: "gray"
+    correct: "grey"
+    rule: "EN-UK uses 'grey'"
+    category: spelling
+
+  - incorrect: "judgment"
+    correct: "judgement"
+    rule: "EN-UK keeps -e- in judgement"
+    category: spelling
+    note: "Legal contexts may use 'judgment' even in EN-UK"
+
+  - incorrect: "aging"
+    correct: "ageing"
+    rule: "EN-UK keeps -e- in ageing"
+    category: spelling
+
+  - incorrect: "airplane"
+    correct: "aeroplane"
+    rule: "EN-UK uses 'aeroplane'"
+    category: spelling
+
+  - incorrect: "check"
+    correct: "cheque"
+    rule: "EN-UK uses 'cheque' for bank instrument"
+    category: spelling
+    context: "For financial instruments. 'Check' is valid for verification."
+
+  - incorrect: "tire"
+    correct: "tyre"
+    rule: "EN-UK uses 'tyre' for vehicle wheel covering"
+    category: spelling
+
+  - incorrect: "curb"
+    correct: "kerb"
+    rule: "EN-UK uses 'kerb' for pavement edge"
+    category: spelling
+
+  # === Punctuation ===
+  - incorrect: "He said, \"hello.\""
+    correct: "He said, 'hello'."
+    rule: "EN-UK uses single quotes as primary; periods go outside quotes"
+    category: punctuation
+
+  # === Vocabulary ===
+  - incorrect: "elevator"
+    correct: "lift"
+    rule: "EN-UK uses 'lift'"
+    category: vocabulary
+
+  - incorrect: "trunk"
+    correct: "boot"
+    rule: "EN-UK uses 'boot' for car storage"
+    category: vocabulary
+
+  - incorrect: "hood"
+    correct: "bonnet"
+    rule: "EN-UK uses 'bonnet' for car front cover"
+    category: vocabulary
+
+  - incorrect: "truck"
+    correct: "lorry"
+    rule: "EN-UK uses 'lorry'"
+    category: vocabulary
+
+  - incorrect: "apartment"
+    correct: "flat"
+    rule: "EN-UK uses 'flat'"
+    category: vocabulary
+
+  - incorrect: "mail"
+    correct: "post"
+    rule: "EN-UK uses 'post'"
+    category: vocabulary
+    context: "When referring to postal service"
+
+  - incorrect: "trash"
+    correct: "rubbish"
+    rule: "EN-UK uses 'rubbish'"
+    category: vocabulary
+
+  - incorrect: "line"
+    correct: "queue"
+    rule: "EN-UK uses 'queue' for a line of people"
+    category: vocabulary
+
+grammar_patterns:
+  serial_comma:
+    description: "Serial/Oxford comma optional in EN-UK"
+    rule: "EN-UK generally omits the serial comma unless needed for clarity"
+    examples:
+      - correct: "apples, oranges and bananas"
+      - also_correct: "apples, oranges, and bananas (for clarity)"
+
+  quotation_marks:
+    description: "Single quotes primary, punctuation outside"
+    rule: "EN-UK uses single quotes as primary; periods and commas go outside unless part of the quotation"
+    examples:
+      - correct: "She said, 'Let's go'."
+      - incorrect: "She said, 'Let's go.'"
+
+  date_format:
+    description: "Day-Month-Year format"
+    rule: "EN-UK uses DD/MM/YYYY or DD Month YYYY"
+    examples:
+      - correct: "21 March 2026"
+      - correct: "21/03/2026"
+      - incorrect: "March 21, 2026"
+      - incorrect: "03/21/2026"
+
+  collective_nouns:
+    description: "Collective nouns can take plural verbs"
+    rule: "In EN-UK, collective nouns can be singular or plural depending on context"
+    examples:
+      - correct: "The team are working hard."
+        also_correct: "The team is working hard."
+      - correct: "The government have announced..."
+        also_correct: "The government has announced..."
+
+  past_participles:
+    description: "EN-UK prefers -t endings for some past tenses"
+    rule: "Some verbs use -t instead of -ed"
+    examples:
+      - correct: "learnt"
+        also_correct: "learned"
+      - correct: "dreamt"
+        also_correct: "dreamed"
+      - correct: "spelt"
+        also_correct: "spelled"

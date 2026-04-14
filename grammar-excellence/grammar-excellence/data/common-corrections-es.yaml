@@ -1,0 +1,215 @@
+# Common ES corrections dictionary
+# Spanish corrections and style guide (RAE norms)
+version: "1.0.0"
+variant: es
+standard: "RAE (Real Academia Espanola) / Fundeu"
+description: "Correcciones ortograficas, gramaticales y de estilo para espanol"
+
+corrections:
+
+  # === Signos de apertura ===
+  - incorrect: "Que hora es?"
+    correct: "Que hora es?"
+    rule: "El espanol requiere signos de interrogacion de apertura"
+    category: punctuation
+
+  - incorrect: "Increible!"
+    correct: "Increible!"
+    rule: "El espanol requiere signos de exclamacion de apertura"
+    category: punctuation
+
+  - incorrect: "Hola, como estas?"
+    correct: "Hola, como estas?"
+    rule: "Los signos de apertura se colocan donde comienza la pregunta/exclamacion"
+    category: punctuation
+
+  # === Tilde diacritica ===
+  - incorrect: "si" (afirmacion)
+    correct: "si"
+    rule: "Tilde diacritica: 'si' (afirmacion/pronombre) vs 'si' (condicional)"
+    category: orthography
+    context: "'Si' con tilde cuando significa 'yes' o pronombre reflexivo"
+
+  - incorrect: "mas" (cantidad)
+    correct: "mas"
+    rule: "Tilde diacritica: 'mas' (cantidad) vs 'mas' (pero)"
+    category: orthography
+    context: "'Mas' con tilde cuando significa 'more'"
+
+  - incorrect: "el" (pronombre)
+    correct: "el"
+    rule: "Tilde diacritica: 'el' (pronombre) vs 'el' (articulo)"
+    category: orthography
+    context: "'El' con tilde cuando es pronombre personal"
+
+  - incorrect: "tu" (pronombre)
+    correct: "tu"
+    rule: "Tilde diacritica: 'tu' (pronombre) vs 'tu' (posesivo)"
+    category: orthography
+    context: "'Tu' con tilde cuando es pronombre personal"
+
+  - incorrect: "mi" (pronombre)
+    correct: "mi"
+    rule: "Tilde diacritica: 'mi' (pronombre) vs 'mi' (posesivo)"
+    category: orthography
+    context: "'Mi' con tilde cuando es pronombre personal (a mi, para mi)"
+
+  - incorrect: "te" (sustantivo)
+    correct: "te"
+    rule: "Tilde diacritica: 'te' (infusion) vs 'te' (pronombre)"
+    category: orthography
+
+  - incorrect: "de" (verbo dar)
+    correct: "de"
+    rule: "Tilde diacritica: 'de' (verbo dar, subjuntivo) vs 'de' (preposicion)"
+    category: orthography
+
+  - incorrect: "se" (verbo saber/ser)
+    correct: "se"
+    rule: "Tilde diacritica: 'se' (verbo saber/ser) vs 'se' (pronombre)"
+    category: orthography
+    context: "'Se' con tilde cuando es verbo: 'Yo se que...' o 'Se amable'"
+
+  # === Solo/solo (RAE 2010) ===
+  - incorrect: "solo" (con tilde, adverbio)
+    correct: "solo"
+    rule: "RAE (2010): 'solo' ya no lleva tilde ni como adverbio ni como adjetivo"
+    category: orthography
+    note: "La RAE desaconseja el uso de tilde en 'solo' desde 2010"
+
+  # === Pronombres demostrativos (RAE 2010) ===
+  - incorrect: "este" (con tilde, pronombre)
+    correct: "este"
+    rule: "RAE (2010): los pronombres demostrativos ya no llevan tilde"
+    category: orthography
+
+  # === Leismo, laismo, loismo ===
+  - incorrect: "La dije que viniera" (laismo)
+    correct: "Le dije que viniera"
+    rule: "Laismo: usar 'le' como complemento indirecto, no 'la'"
+    category: grammar
+    note: "El laismo es incorrecto segun la RAE"
+
+  - incorrect: "Le vi en el parque" (leismo de cosa)
+    correct: "Lo vi en el parque"
+    rule: "Leismo de cosa: usar 'lo' para complemento directo masculino de cosa"
+    category: grammar
+    note: "El leismo de persona masculina singular esta aceptado por la RAE"
+
+  # === Dequeismo y queismo ===
+  - incorrect: "Pienso de que es correcto"
+    correct: "Pienso que es correcto"
+    rule: "Dequeismo: no anadir 'de' antes de 'que' tras verbos que no lo exigen"
+    category: grammar
+
+  - incorrect: "Me alegro que hayas venido"
+    correct: "Me alegro de que hayas venido"
+    rule: "Queismo: no omitir 'de' antes de 'que' cuando el verbo lo exige"
+    category: grammar
+
+  # === Concordancia ===
+  - incorrect: "Habian muchas personas"
+    correct: "Habia muchas personas"
+    rule: "'Haber' impersonal siempre en singular"
+    category: grammar
+
+  - incorrect: "Hubieron problemas"
+    correct: "Hubo problemas"
+    rule: "'Haber' impersonal siempre en singular"
+    category: grammar
+
+  # === Confusiones comunes ===
+  - incorrect: "haber" (verbo)
+    correct: "a ver"
+    rule: "No confundir 'haber' (verbo auxiliar) con 'a ver' (vamos a ver)"
+    category: orthography
+    context: "Cuando el sentido es 'vamos a ver': 'A ver que pasa'"
+
+  - incorrect: "haya" (verbo)
+    correct: "halla"
+    rule: "No confundir 'haya' (subjuntivo de haber) con 'halla' (encontrar)"
+    category: orthography
+    context: "Depende del contexto: 'se halla' (se encuentra) vs 'que haya' (que exista)"
+
+  - incorrect: "hay"
+    correct: "ahi"
+    rule: "No confundir 'hay' (verbo haber) con 'ahi' (lugar) ni 'ay' (exclamacion)"
+    category: orthography
+    context: "Tres formas distintas: 'hay' (existe), 'ahi' (en ese lugar), 'ay' (exclamacion)"
+
+  - incorrect: "echo"
+    correct: "hecho"
+    rule: "No confundir 'echo' (verbo echar) con 'hecho' (participio de hacer)"
+    category: orthography
+    context: "'De hecho' (in fact); 'echo de menos' es correcto (verbo echar)"
+
+  - incorrect: "sino" (pero)
+    correct: "si no"
+    rule: "No confundir 'sino' (conjuncion adversativa) con 'si no' (condicional negativa)"
+    category: orthography
+    context: "'Sino' une contrarios: 'No es azul, sino rojo'. 'Si no' es condicional: 'Si no vienes...'"
+
+  - incorrect: "por que" (por el cual)
+    correct: "porque"
+    rule: "Distinguir: 'por que' (por el cual / interrogativo), 'porque' (causal), 'porqe' (sustantivo)"
+    category: orthography
+    context: "Causal: 'Porque llueve'. Interrogativo: 'Por que llueve?'. Sustantivo: 'El porque'."
+
+  - incorrect: "atraves"
+    correct: "a traves"
+    rule: "'A traves' se escribe en dos palabras"
+    category: orthography
+
+  - incorrect: "osea"
+    correct: "o sea"
+    rule: "'O sea' se escribe en dos palabras"
+    category: orthography
+
+  - incorrect: "enserio"
+    correct: "en serio"
+    rule: "'En serio' se escribe en dos palabras"
+    category: orthography
+
+  - incorrect: "sobretodo" (adverbio)
+    correct: "sobre todo"
+    rule: "'Sobre todo' (adverbio, especially) se escribe en dos palabras; 'sobretodo' es un abrigo"
+    category: orthography
+
+grammar_patterns:
+  subjuntivo:
+    description: "Uso del subjuntivo tras expresiones de deseo, duda, emocion"
+    rule: "El subjuntivo se usa tras verbos de deseo, duda, emocion y expresiones impersonales"
+    examples:
+      - correct: "Espero que vengas"
+        incorrect: "Espero que vienes"
+      - correct: "Es posible que llueva"
+        incorrect: "Es posible que llueve"
+
+  ser_vs_estar:
+    description: "Uso de 'ser' vs 'estar'"
+    rule: "'Ser' para identidad/caracteristicas permanentes; 'estar' para estados/ubicacion"
+    examples:
+      - correct: "El libro es interesante" (characteristic)
+      - correct: "El libro esta en la mesa" (location)
+      - correct: "Ella esta cansada" (state)
+      - correct: "Ella es alta" (characteristic)
+
+  preposiciones:
+    description: "Preposiciones correctas con verbos"
+    rule: "Cada verbo exige su preposicion correcta"
+    examples:
+      - correct: "depender de"
+        incorrect: "depender en"
+      - correct: "consistir en"
+        incorrect: "consistir de"
+      - correct: "insistir en"
+        incorrect: "insistir de"
+
+  numeros:
+    description: "Separadores decimales y de miles"
+    rule: "En espanol se usa coma decimal y punto/espacio para miles"
+    examples:
+      - correct: "1.000 (mil)"
+      - correct: "3,14 (pi)"
+      - incorrect: "1,000 (mil con coma)"
+      - incorrect: "3.14 (pi con punto)"

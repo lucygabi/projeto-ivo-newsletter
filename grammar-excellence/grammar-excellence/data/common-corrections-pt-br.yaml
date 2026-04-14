@@ -1,0 +1,240 @@
+# Common PT-BR corrections dictionary
+# Dicionario de correcoes para Portugues Brasileiro
+version: "1.0.0"
+variant: pt-br
+standard: "AO90 (variante brasileira)"
+description: "Correcoes lexicais, ortograficas e gramaticais para PT-BR"
+
+corrections:
+
+  # === Grupo consonantico (simplificado em PT-BR) ===
+  - incorrect: "contacto"
+    correct: "contato"
+    rule: "PT-BR simplifica grupo consonantico -ct-"
+    category: orthography
+
+  - incorrect: "facto"
+    correct: "fato"
+    rule: "PT-BR simplifica grupo consonantico -ct-"
+    category: orthography
+    context: "Tanto para 'acontecimento' como 'vestuario' (contexto diferencia)"
+
+  - incorrect: "acto"
+    correct: "ato"
+    rule: "PT-BR simplifica grupo consonantico -ct-"
+    category: orthography
+
+  - incorrect: "projecto"
+    correct: "projeto"
+    rule: "PT-BR simplifica grupo consonantico -ct-"
+    category: orthography
+
+  - incorrect: "electricidade"
+    correct: "eletricidade"
+    rule: "PT-BR simplifica grupo consonantico -ct-/-c-"
+    category: orthography
+
+  - incorrect: "recepcionista"
+    correct: "recepcionista"
+    rule: "Valido em PT-BR (verificar: 'rececionista' e PT-PT)"
+    category: orthography
+
+  # === Vocabulario PT-BR vs PT-PT ===
+  - incorrect: "ficheiro"
+    correct: "arquivo"
+    rule: "PT-BR usa 'arquivo' para file"
+    category: vocabulary
+
+  - incorrect: "utilizador"
+    correct: "usuario"
+    rule: "PT-BR usa 'usuario' para user"
+    category: vocabulary
+
+  - incorrect: "telemovel"
+    correct: "celular"
+    rule: "PT-BR usa 'celular' para mobile phone"
+    category: vocabulary
+
+  - incorrect: "autocarro"
+    correct: "onibus"
+    rule: "PT-BR usa 'onibus' para bus"
+    category: vocabulary
+
+  - incorrect: "ecra"
+    correct: "tela"
+    rule: "PT-BR usa 'tela' para screen"
+    category: vocabulary
+
+  - incorrect: "comboio"
+    correct: "trem"
+    rule: "PT-BR usa 'trem' para train"
+    category: vocabulary
+
+  - incorrect: "rebucado"
+    correct: "bala"
+    rule: "PT-BR usa 'bala' para candy"
+    category: vocabulary
+
+  - incorrect: "pequeno-almoco"
+    correct: "cafe da manha"
+    rule: "PT-BR usa 'cafe da manha' para breakfast"
+    category: vocabulary
+
+  - incorrect: "peao"
+    correct: "pedestre"
+    rule: "PT-BR usa 'pedestre' para pedestrian"
+    category: vocabulary
+
+  - incorrect: "passeio"
+    correct: "calcada"
+    rule: "PT-BR usa 'calcada' para sidewalk"
+    category: vocabulary
+    context: "Quando se refere a area de pedestres. 'Passeio' em PT-BR significa walk/stroll."
+
+  - incorrect: "empregado de mesa"
+    correct: "garcom"
+    rule: "PT-BR usa 'garcom' para waiter"
+    category: vocabulary
+
+  - incorrect: "frigorifico"
+    correct: "geladeira"
+    rule: "PT-BR usa 'geladeira' para refrigerator"
+    category: vocabulary
+
+  - incorrect: "codigo postal"
+    correct: "CEP"
+    rule: "PT-BR usa 'CEP' (Codigo de Enderecamento Postal, formato XXXXX-XXX)"
+    category: vocabulary
+
+  - incorrect: "autoclismo"
+    correct: "descarga"
+    rule: "PT-BR usa 'descarga' para toilet flush"
+    category: vocabulary
+
+  - incorrect: "paragem"
+    correct: "parada"
+    rule: "PT-BR usa 'parada' ou 'ponto de onibus' para bus stop"
+    category: vocabulary
+
+  - incorrect: "sandes"
+    correct: "sanduiche"
+    rule: "PT-BR usa 'sanduiche' para sandwich"
+    category: vocabulary
+
+  - incorrect: "bicha"
+    correct: "fila"
+    rule: "PT-BR usa 'fila' para queue/line"
+    category: vocabulary
+    note: "'Bicha' tem conotacao pejorativa em PT-BR — nunca usar como 'fila'"
+
+  - incorrect: "rato"
+    correct: "mouse"
+    rule: "PT-BR usa 'mouse' para computer mouse"
+    category: vocabulary
+    context: "Em contexto informatico. 'Rato' em PT-BR e apenas o animal."
+
+  - incorrect: "aplicacao"
+    correct: "aplicativo"
+    rule: "PT-BR usa 'aplicativo' ou 'app' para application"
+    category: vocabulary
+
+  - incorrect: "equipa"
+    correct: "equipe"
+    rule: "PT-BR usa 'equipe' (com -e final) para team"
+    category: vocabulary
+
+  - incorrect: "formacao"
+    correct: "treinamento"
+    rule: "PT-BR usa 'treinamento' para training (profissional)"
+    category: vocabulary
+    context: "Em contexto corporativo. 'Formacao' tambem aceite mas menos comum."
+
+  - incorrect: "copia de seguranca"
+    correct: "backup"
+    rule: "PT-BR usa 'backup' (anglicismo aceite)"
+    category: vocabulary
+
+  - incorrect: "captura de ecra"
+    correct: "captura de tela"
+    rule: "PT-BR usa 'captura de tela' ou 'print' para screenshot"
+    category: vocabulary
+
+  - incorrect: "portagem"
+    correct: "pedagio"
+    rule: "PT-BR usa 'pedagio' para toll"
+    category: vocabulary
+
+  - incorrect: "conduzir"
+    correct: "dirigir"
+    rule: "PT-BR usa 'dirigir' para to drive"
+    category: vocabulary
+
+  - incorrect: "carta de conducao"
+    correct: "carteira de motorista"
+    rule: "PT-BR usa 'carteira de motorista' ou 'CNH'"
+    category: vocabulary
+
+  - incorrect: "matricula"
+    correct: "placa"
+    rule: "PT-BR usa 'placa' para license plate"
+    category: vocabulary
+
+  # === Padroes gramaticais PT-BR ===
+  - incorrect: "da-me"
+    correct: "me da"
+    rule: "PT-BR usa proclise (pronome antes do verbo) naturalmente"
+    category: grammar
+    note: "Proclise e natural e preferida em PT-BR, inclusive em inicio de frase"
+
+  - incorrect: "disse-me"
+    correct: "me disse"
+    rule: "PT-BR prefere proclise em linguagem corrente"
+    category: grammar
+
+  - incorrect: "esta a fazer"
+    correct: "esta fazendo"
+    rule: "PT-BR usa gerundio para acoes em progresso"
+    category: grammar
+
+  - incorrect: "esta a trabalhar"
+    correct: "esta trabalhando"
+    rule: "PT-BR usa gerundio para acoes em progresso"
+    category: grammar
+
+  - incorrect: "esta a chover"
+    correct: "esta chovendo"
+    rule: "PT-BR usa gerundio para acoes em progresso"
+    category: grammar
+
+grammar_patterns:
+  proclise:
+    description: "Pronome antes do verbo (proclise natural em PT-BR)"
+    rule: "Em PT-BR, a proclise e a posicao natural do pronome clitico"
+    examples:
+      - pt_br: "Me fala sobre isso"
+        formal: "Fale-me sobre isso (mais formal, menos natural)"
+      - pt_br: "Te amo"
+        formal: "Amo-te (literario)"
+
+  gerundio:
+    description: "Uso do gerundio para acoes em curso"
+    rule: "PT-BR usa 'estar + gerundio' para acoes em progresso"
+    examples:
+      - correct: "Estou comendo"
+      - correct: "Estamos desenvolvendo"
+      - correct: "Ela esta trabalhando"
+
+  voce:
+    description: "Uso de 'voce' como pronome de tratamento"
+    rule: "PT-BR usa 'voce' naturalmente como pronome de 2a pessoa informal"
+    examples:
+      - informal: "Voce quer ir?"
+      - formal: "O senhor deseja ir?"
+    note: "Em PT-BR, 'tu' e regional (Sul, alguns estados do Norte/Nordeste)"
+
+  a_gente:
+    description: "Uso de 'a gente' como 1a pessoa do plural"
+    rule: "PT-BR coloquial usa 'a gente' em vez de 'nos' (verbo na 3a pessoa singular)"
+    examples:
+      - colloquial: "A gente vai ao cinema"
+        formal: "Nos vamos ao cinema"

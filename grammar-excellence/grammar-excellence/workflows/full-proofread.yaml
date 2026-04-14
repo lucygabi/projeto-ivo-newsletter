@@ -1,0 +1,223 @@
+name: full-proofread
+version: 2.0.0
+description: >
+  Workflow completo de revisao gramatical multilingue com quality gate.
+  Linear flow with iteration counters — no nested RETURN_TO loops.
+  Each retry creates a new iteration rather than looping back.
+trigger: manual
+
+parameters:
+  scope:
+    type: string
+    required: true
+    description: Diretorio ou ficheiro(s) a processar
+  lang:
+    type: string
+    required: true
+    enum: [pt-pt, pt-br, en-us, en-uk, fr, es, all]
+    description: Variante linguistica (ou 'all' para todas)
+  brandbook_path:
+    type: string
+    required: false
+    description: Caminho para o brandbook (auto-detect se omitido)
+
+# ─────────────────────────────────────────────
+# DESIGN NOTES
+# ─────────────────────────────────────────────
+# 1. LINEAR FLOW: No RETURN_TO loops. Each retry is a new iteration
+#    with its own counter. Exhausted iterations escalate, not loop.
+# 2. VETO CONDITIONS: Correct phase vetoes if zero corrections available.
+#    Brandbook phase skips if no brandbook found.
+# 3. REPORT IS SCRIPTED: Report phase is execution_type Worker — no agent.
+# 4. SELF-REVIEW LIMITATION: Same proofreader does Correct + Review.
+#    This is a known limitation documented in grammar-review.md.
+#    The Audit phase (Saramago) provides the independent QA gate.
+# ─────────────────────────────────────────────
+
+phases:
+
+  # ═══════════════════════════════════════════
+  # PHASE 1: SCAN
+  # ═══════════════════════════════════════════
+  - name: Scan
+    agent: "{lang}-proofreader"
+    task: grammar-scan.md
+    execution_type: Hybrid
+    inputs:
+      scope: "{{scope}}"
+      lang: "{{lang}}"
+      severity: warning
+    outputs:
+      - scan_report
+    gate:
+      condition: "scan_report.total > 0"
+      on_fail: "SKIP_TO:Report"
+      message: "Nenhum problema encontrado -- texto impecavel!"
+
+  # ═══════════════════════════════════════════
+  # PHASE 2: CORRECT
+  # ═══════════════════════════════════════════
+  - name: Correct
+    agent: "{lang}-proofreader"
+    task: grammar-correct.md
+    execution_type: Agent
+    inputs:
+      from_scan: true
+      lang: "{{lang}}"
+      mode: interactive
+    outputs:
+      - corrections
+    depends_on: [Scan]
+    veto:
+      condition: "corrections.available == 0"
+      action: "SKIP_TO:Report"
+      message: "Zero correcoes disponiveis apos scan. Nada a corrigir."
+
+  # ═══════════════════════════════════════════
+  # PHASE 3: REVIEW (self-review by proofreader)
+  # ═══════════════════════════════════════════
+  # KNOWN LIMITATION: Same agent does Correct + Review.
+  # This is acknowledged. The independent QA is in Phase 5 (Audit).
+  - name: Review
+    agent: "{lang}-proofreader"
+    task: grammar-review.md
+    execution_type: Agent
+    inputs:
+      last_corrections: true
+      lang: "{{lang}}"
+    outputs:
+      - review_verdict
+      - quality_score
+    depends_on: [Correct]
+    iteration:
+      max_iterations: 3
+      counter: review_iteration
+      description: >
+        Each iteration is a NEW pass: Correct(N) -> Review(N).
+        If Review(N) fails, a new Correct(N+1) is triggered,
+        followed by Review(N+1). No backward loop.
+    gate:
+      condition: "review_verdict == 'APPROVED'"
+      on_fail: "NEW_ITERATION:Correct"
+      message: "Review quality gate nao passou (iteration {{review_iteration}}/3) -- nova iteracao de correcao."
+    on_exhausted:
+      action: "ESCALATE"
+      escalate_to: "user"
+      message: >
+        Review quality gate falhou apos 3 iteracoes.
+        Scores das iteracoes: {{iteration_scores}}.
+        O utilizador deve decidir: (1) aceitar com score atual,
+        (2) intervir manualmente, ou (3) abortar workflow.
+      options:
+        - label: "Aceitar com score atual"
+          action: "CONTINUE_TO:Brandbook"
+          condition: "quality_score >= 60"
+        - label: "Intervir manualmente"
+          action: "PAUSE"
+        - label: "Abortar workflow"
+          action: "ABORT"
+
+  # ═══════════════════════════════════════════
+  # PHASE 4: BRANDBOOK CONSISTENCY
+  # ═══════════════════════════════════════════
+  - name: Brandbook
+    agent: "{lang}-proofreader"
+    task: brandbook-consistency.md
+    execution_type: Agent
+    inputs:
+      scope: "{{scope}}"
+      lang: "{{lang}}"
+      brandbook_path: "{{brandbook_path}}"
+    outputs:
+      - consistency_score
+      - deviations
+    depends_on: [Review]
+    optional: true
+    veto:
+      condition: "brandbook_found == false"
+      action: "SKIP"
+      message: "Nenhum brandbook encontrado. Fase ignorada. consistency_score = N/A."
+      set_defaults:
+        consistency_score: "N/A"
+        deviations: []
+
+  # ═══════════════════════════════════════════
+  # PHASE 5: AUDIT (independent QA by Saramago)
+  # ═══════════════════════════════════════════
+  - name: Audit
+    agent: grammar-auditor
+    task: audit-deploy-gate.md
+    execution_type: Hybrid
+    description: Saramago audita as correcoes -- gate bloqueante pre-deploy
+    inputs:
+      scope: "{{scope}}"
+      lang: "{{lang}}"
+      mode: full
+    outputs:
+      - audit_verdict
+      - audit_score
+      - audit_issues
+    depends_on: [Review, Brandbook]
+    iteration:
+      max_iterations: 2
+      counter: audit_iteration
+      description: >
+        Each iteration is a NEW pass: Correct(N) -> Review(N) -> Audit(N).
+        If Audit(N) fails, a new Correct(N+1) is triggered for the
+        specific issues identified, followed by Review(N+1) and Audit(N+1).
+    gate:
+      condition: "audit_verdict == 'APPROVED'"
+      on_fail: "NEW_ITERATION:Correct"
+      message: "Auditoria falhou (iteration {{audit_iteration}}/2) -- devolver aos revisores para correcao."
+    on_exhausted:
+      action: "ESCALATE"
+      escalate_to: "user"
+      message: >
+        Audit quality gate falhou apos 2 iteracoes.
+        Ultimo score: {{audit_score}}/100.
+        Issues pendentes: {{audit_issues.count}}.
+        O utilizador deve decidir: (1) aceitar risco e fazer deploy,
+        (2) intervir manualmente nas issues, ou (3) abortar deploy.
+      options:
+        - label: "Aceitar risco (deploy com issues conhecidas)"
+          action: "CONTINUE_TO:Report"
+          condition: "audit_verdict != 'DEPLOY_BLOCKED'"
+          warning: "Deploy com issues conhecidas. Score abaixo do threshold."
+        - label: "Intervir manualmente"
+          action: "PAUSE"
+        - label: "Abortar deploy"
+          action: "ABORT"
+
+  # ═══════════════════════════════════════════
+  # PHASE 6: REPORT (scripted — no agent needed)
+  # ═══════════════════════════════════════════
+  - name: Report
+    description: Relatorio final consolidado (scripted, no agent needed)
+    execution_type: Worker
+    depends_on: [Audit]
+    outputs:
+      - final_report
+    template: |
+      ## Grammar Excellence Report
+
+      - **Lingua:** {{lang}}
+      - **Scope:** {{scope}}
+      - **Problemas encontrados:** {{scan_report.total}}
+      - **Correcoes aplicadas:** {{corrections.count}}
+      - **Review Score:** {{quality_score}}/100
+      - **Review Iterations:** {{review_iteration}}
+      - **Audit Score:** {{audit_score}}/100
+      - **Audit Iterations:** {{audit_iteration}}
+      - **Brandbook Score:** {{consistency_score}}
+      - **Veredicto Final:** {{audit_verdict}}
+      - **Deploy:** {{audit_verdict == 'APPROVED' ? 'AUTORIZADO' : 'BLOQUEADO'}}
+
+      ### Issues Pendentes
+      {{#if audit_issues.count > 0}}
+      {{audit_issues | format_table}}
+      {{else}}
+      Nenhuma issue pendente.
+      {{/if}}
+
+      ### Iteration History
+      {{iteration_history | format_list}}

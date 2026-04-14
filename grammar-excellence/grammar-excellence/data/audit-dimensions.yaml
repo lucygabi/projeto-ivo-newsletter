@@ -1,0 +1,190 @@
+# Audit dimensions for grammar quality assessment
+# Used by the Grammar Auditor (Saramago) to evaluate correction quality
+version: "1.0.0"
+description: "Quality dimensions, weights, and checks for grammar audit"
+
+dimensions:
+  - id: precision
+    name: "Precisao Linguistica"
+    weight: 0.25
+    description: "As correcoes estao gramaticalmente corretas?"
+    checks:
+      - id: variant_rules
+        description: "Regras da variante aplicadas corretamente"
+        examples:
+          - "PT-PT: enclise em frases afirmativas"
+          - "PT-BR: proclise natural"
+          - "EN-US: -ize suffix"
+          - "EN-UK: -ise suffix"
+      - id: agreement
+        description: "Concordancia verbal e nominal"
+        examples:
+          - "Sujeito-verbo: 'Os ficheiros foram corrigidos' (nao 'foi')"
+          - "Adjetivo-nome: 'correcoes aplicadas' (nao 'aplicados')"
+      - id: punctuation
+        description: "Pontuacao conforme norma da variante"
+        examples:
+          - "FR: espace insecable avant : ; ! ?"
+          - "ES: signos de apertura"
+          - "EN-US: periods inside quotes"
+      - id: spelling
+        description: "Ortografia conforme dicionario da variante"
+        examples:
+          - "PT-PT: 'contacto' (nao 'contato')"
+          - "EN-UK: 'colour' (nao 'color')"
+      - id: false_positives
+        description: "Ausencia de correcoes incorretas (falsos positivos)"
+        severity: critical
+        examples:
+          - "Nao corrigir termos tecnicos do whitelist"
+          - "Nao alterar citacoes literais"
+          - "Nao modificar nomes proprios"
+
+  - id: completeness
+    name: "Completude"
+    weight: 0.20
+    description: "Foram detetados todos os erros?"
+    checks:
+      - id: sampling
+        description: "Amostragem aleatoria de 20% dos ficheiros"
+        method: "Selecionar 20% dos ficheiros aleatoriamente e verificar manualmente"
+      - id: no_obvious_misses
+        description: "Sem erros obvios ignorados"
+        examples:
+          - "Erros de variante (PT-BR em ficheiro PT-PT)"
+          - "Erros de concordancia visíveis"
+          - "Erros ortograficos comuns"
+      - id: pattern_coverage
+        description: "Todos os padroes do dicionario foram verificados"
+        method: "Confirmar que cada categoria de correcao foi avaliada"
+      - id: file_coverage
+        description: "Todos os ficheiros elegiveis foram processados"
+        method: "Comparar lista de ficheiros processados com elegiveis"
+
+  - id: integrity
+    name: "Integridade Tecnica"
+    weight: 0.25
+    description: "O conteudo tecnico esta intacto?"
+    checks:
+      - id: code_blocks
+        description: "Code blocks inalterados"
+        severity: critical
+        method: "Comparar blocos de codigo antes/depois — devem ser identicos"
+      - id: urls
+        description: "URLs funcionais"
+        severity: critical
+        method: "Verificar que nenhum URL foi modificado"
+      - id: variables
+        description: "Variaveis preservadas"
+        severity: critical
+        method: "Verificar ${var}, {{var}}, {var} inalterados"
+      - id: frontmatter
+        description: "Front matter intacto"
+        severity: critical
+        method: "YAML front matter identico antes/depois"
+      - id: markdown_structure
+        description: "Estrutura Markdown preservada"
+        severity: major
+        method: "Headings, listas, tabelas, links funcionais"
+      - id: file_encoding
+        description: "Encoding do ficheiro preservado"
+        severity: major
+        method: "UTF-8 mantido, sem caracteres corrompidos"
+      - id: line_endings
+        description: "Line endings preservados"
+        severity: minor
+        method: "LF/CRLF consistente com o original"
+      - id: whitespace
+        description: "Indentacao e espacamento preservados"
+        severity: minor
+        method: "Tabs/spaces consistentes, sem trailing whitespace adicionado"
+
+  - id: consistency
+    name: "Consistencia"
+    weight: 0.15
+    description: "Regras aplicadas uniformemente?"
+    checks:
+      - id: uniform_corrections
+        description: "Mesma correcao aplicada em todas as ocorrencias"
+        method: "Pesquisar todas as ocorrencias de cada termo corrigido"
+        examples:
+          - "Se 'ficheiro' foi corrigido uma vez, todas as ocorrencias devem ser corrigidas"
+      - id: no_variant_mixing
+        description: "Sem mistura de variantes"
+        severity: critical
+        method: "Verificar que nao ha PT-BR misturado com PT-PT, EN-US com EN-UK, etc."
+      - id: terminology_uniform
+        description: "Terminologia consistente ao longo do documento"
+        method: "Mesmo termo usado para o mesmo conceito em todo o ficheiro"
+      - id: style_uniform
+        description: "Estilo de pontuacao e formatacao consistente"
+        method: "Mesmas regras de pontuacao em todo o documento"
+
+  - id: context
+    name: "Contexto"
+    weight: 0.15
+    description: "O significado original foi preservado?"
+    checks:
+      - id: meaning_preserved
+        description: "Sentido das frases mantido"
+        method: "Leitura comparativa de paragrafos corrigidos"
+        examples:
+          - "Correcao nao deve alterar o significado da frase"
+          - "Sinonimos devem manter a intencao original"
+      - id: tone_preserved
+        description: "Tom de voz respeitado"
+        method: "Verificar que o tom (formal/informal/tecnico) nao mudou"
+        examples:
+          - "Documento tecnico mantem linguagem tecnica"
+          - "Documentacao informal nao se torna excessivamente formal"
+      - id: audience_appropriate
+        description: "Linguagem apropriada ao publico-alvo"
+        method: "Verificar que o nivel de linguagem e adequado"
+      - id: brand_voice
+        description: "Voz da marca preservada (quando aplicavel)"
+        method: "Consultar brandbook se disponivel"
+
+scoring:
+  scale: "0-100"
+  method: "weighted_average"
+  formula: "sum(dimension_score * dimension_weight)"
+  dimension_scoring:
+    per_check: "Each check scored 0-100"
+    dimension_total: "Average of all check scores within dimension"
+  rounding: "Round to nearest integer"
+
+verdicts:
+  - id: APPROVED
+    min_score: 85
+    description: "Deploy autorizado"
+    action: "Proceder para deploy ou fase seguinte"
+    color: "green"
+
+  - id: NEEDS_REVISION
+    min_score: 60
+    max_score: 84
+    description: "Retornar ao proofreader"
+    action: "Enviar feedback especifico ao proofreader para correcao"
+    color: "yellow"
+    max_iterations: 3
+
+  - id: REJECTED
+    min_score: 0
+    max_score: 59
+    description: "Refazer correcoes"
+    action: "Correcoes devem ser refeitas do zero"
+    color: "red"
+
+  - id: DEPLOY_BLOCKED
+    trigger: "regression_detected"
+    description: "Bloqueio imediato — regressao detetada"
+    action: "Investigar e corrigir antes de qualquer retry"
+    color: "red"
+    blocking_conditions:
+      - "Texto correto foi corrompido (regressao)"
+      - "Conteudo de code block modificado"
+      - "URL ou link partido pela correcao"
+      - "Variavel de template alterada"
+      - "Mistura de variantes linguisticas no mesmo ficheiro"
+      - "Front matter corrompido"
+      - "Estrutura Markdown quebrada"

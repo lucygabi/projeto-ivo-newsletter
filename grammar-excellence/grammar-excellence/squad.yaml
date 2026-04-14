@@ -1,0 +1,76 @@
+name: grammar-excellence
+version: 1.1.0
+short-title: Multilingual Grammar Excellence Squad
+description: Squad de excelência para correção gramatical precisa em 6 variantes linguísticas — PT-PT, PT-BR, EN-US, EN-UK, FR, ES. Cobre documentação, copy, brandbook e consistência de tom de voz.
+author: CALLBACK-Online
+license: MIT
+slashPrefix: grammar
+
+aiox:
+  minVersion: "2.1.0"
+  type: squad
+
+tags:
+  - grammar
+  - proofreading
+  - multilingual
+  - brandbook
+  - copy
+  - documentation
+  - quality
+  - excellence
+
+components:
+  agents:
+    - pt-pt-proofreader.md
+    - pt-br-proofreader.md
+    - en-us-proofreader.md
+    - en-uk-proofreader.md
+    - fr-proofreader.md
+    - es-proofreader.md
+    - grammar-auditor.md
+  tasks:
+    - grammar-scan.md
+    - grammar-correct.md
+    - grammar-review.md
+    - brandbook-consistency.md
+    - audit-deploy-gate.md
+  workflows:
+    - full-proofread.yaml
+  checklists:
+    - grammar-quality-gate.md
+  data:
+    - common-corrections-pt-pt.yaml
+    - common-corrections-pt-br.yaml
+    - common-corrections-en-us.yaml
+    - common-corrections-en-uk.yaml
+    - common-corrections-fr.yaml
+    - common-corrections-es.yaml
+    - audit-dimensions.yaml
+    - exclude-patterns.yaml
+    - technical-terms-whitelist.yaml
+    - file-extensions-eligible.yaml
+    - verdict-thresholds.yaml
+  scripts:
+    - check-integrity.sh
+    - count-eligible-files.sh
+    - detect-language.sh
+    - validate-quality-gate.sh
+
+config:
+  extends: extend
+  coding-standards: config/grammar-standards.md
+  tech-stack: config/tech-stack.md
+  source-tree: config/source-tree.md
+
+tools:
+  bash:
+    - scripts/check-integrity.sh
+    - scripts/count-eligible-files.sh
+    - scripts/detect-language.sh
+    - scripts/validate-quality-gate.sh
+
+dependencies:
+  node: []
+  python: []
+  squads: []

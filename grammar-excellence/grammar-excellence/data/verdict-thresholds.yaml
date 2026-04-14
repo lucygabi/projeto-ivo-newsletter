@@ -1,0 +1,119 @@
+# Verdict thresholds
+# Single source of truth for all verdict thresholds across the grammar pipeline
+version: "1.0.0"
+description: "Centralized verdict thresholds for review, audit, and deploy decisions"
+
+review_verdicts:
+  APPROVED:
+    min: 85
+    action: "Proceed to next phase"
+    description: "Quality meets or exceeds standards"
+    next_step: "brandbook_check or audit"
+  NEEDS_REVISION:
+    min: 60
+    max: 84
+    action: "Return to proofreader with feedback"
+    description: "Quality is acceptable but needs improvement"
+    next_step: "proofreader corrects flagged issues"
+    max_iterations: 3
+  REJECTED:
+    min: 0
+    max: 59
+    action: "Redo corrections from scratch"
+    description: "Quality is below acceptable threshold"
+    next_step: "full re-correction required"
+
+audit_verdicts:
+  APPROVED:
+    min: 85
+    action: "Deploy authorized"
+    description: "Content passes all quality dimensions"
+    next_step: "proceed to deploy"
+  NEEDS_REVISION:
+    min: 60
+    max: 84
+    action: "Return to correction phase"
+    description: "Some dimensions need improvement"
+    next_step: "return to proofreader with audit feedback"
+    max_iterations: 2
+  REJECTED:
+    min: 0
+    max: 59
+    action: "Full re-correction required"
+    description: "Multiple dimensions failed"
+    next_step: "restart correction pipeline"
+  DEPLOY_BLOCKED:
+    trigger: "Any blocking condition detected"
+    action: "Immediate block — investigate and fix before retry"
+    description: "Critical integrity or regression issue detected"
+    next_step: "investigate root cause, fix, then restart audit"
+    override_required: "manual approval by squad lead"
+
+blocking_conditions:
+  - id: regression
+    description: "Regression detected (correct text corrupted)"
+    severity: critical
+    example: "Word that was correct before is now incorrect after corrections"
+
+  - id: code_block_corruption
+    description: "Code block content modified"
+    severity: critical
+    example: "Code inside ``` fences was altered by grammar correction"
+
+  - id: url_broken
+    description: "URL or link broken by correction"
+    severity: critical
+    example: "URL was partially corrected or truncated"
+
+  - id: variable_altered
+    description: "Template variable altered (${var}, {{placeholder}}, {key})"
+    severity: critical
+    example: "${userName} changed to ${nome_de_utilizador}"
+
+  - id: mixed_variants
+    description: "Mixed language variants in same file (PT-PT + PT-BR)"
+    severity: critical
+    example: "File contains both 'ficheiro' (PT-PT) and 'usuario' (PT-BR)"
+
+  - id: frontmatter_corrupted
+    description: "YAML front matter structure broken"
+    severity: critical
+    example: "Front matter keys or values were grammar-corrected"
+
+  - id: markdown_structure_broken
+    description: "Markdown structure damaged (headings, tables, lists)"
+    severity: major
+    example: "Table alignment broken by text expansion from correction"
+
+  - id: encoding_corrupted
+    description: "File encoding corrupted or changed"
+    severity: critical
+    example: "UTF-8 file now contains invalid byte sequences"
+
+scan_thresholds:
+  high_density:
+    problems_per_file: 20
+    description: "File has high error density — flag for manual review"
+  medium_density:
+    problems_per_file: 10
+    description: "File has moderate error density — normal processing"
+  low_density:
+    problems_per_file: 3
+    description: "File has low error density — quick fix"
+
+consistency_thresholds:
+  variant_purity:
+    min: 100
+    description: "No variant mixing allowed (must be 100% pure)"
+  terminology_consistency:
+    min: 95
+    description: "Same term used for same concept in 95%+ of occurrences"
+  style_consistency:
+    min: 90
+    description: "Punctuation and formatting rules applied in 90%+ of cases"
+
+iteration_limits:
+  review_max_iterations: 3
+  audit_max_iterations: 2
+  total_pipeline_max_iterations: 5
+  escalation_on_max: "Escalate to squad lead for manual decision"

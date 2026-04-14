@@ -1,0 +1,257 @@
+# Common PT-PT corrections dictionary
+# Dicionario de correcoes para Portugues Europeu (variante de Portugal)
+version: "1.0.0"
+variant: pt-pt
+standard: "AO90 (variante europeia)"
+description: "Correcoes lexicais, ortograficas e gramaticais para PT-PT"
+
+corrections:
+
+  # === Grupo consonantico -ct- (preservado em PT-PT) ===
+  - incorrect: "contato"
+    correct: "contacto"
+    rule: "PT-PT preserva grupo consonantico -ct-"
+    category: orthography
+
+  - incorrect: "fato"
+    correct: "facto"
+    rule: "PT-PT preserva grupo consonantico -ct-"
+    category: orthography
+    context: "Quando significa 'acontecimento'. 'Fato' (vestuario) e valido em PT-PT."
+
+  - incorrect: "ato"
+    correct: "acto"
+    rule: "PT-PT preserva grupo consonantico -ct- (pre-AO90; AO90 aceita ambas)"
+    category: orthography
+    note: "AO90 aceita 'ato' mas 'acto' permanece mais comum em PT-PT"
+
+  - incorrect: "projeto"
+    correct: "projecto"
+    rule: "PT-PT preserva grupo consonantico -ct- (pre-AO90; AO90 aceita ambas)"
+    category: orthography
+    note: "AO90 aceita 'projeto' mas 'projecto' permanece frequente em PT-PT"
+
+  # === Vocabulario PT-PT vs PT-BR ===
+  - incorrect: "arquivo"
+    correct: "ficheiro"
+    rule: "PT-PT usa 'ficheiro' para file"
+    category: vocabulary
+    context: "Quando se refere a ficheiro informatico. 'Arquivo' e valido para archive."
+
+  - incorrect: "usuario"
+    correct: "utilizador"
+    rule: "PT-PT usa 'utilizador' para user"
+    category: vocabulary
+
+  - incorrect: "celular"
+    correct: "telemovel"
+    rule: "PT-PT usa 'telemovel' para mobile phone"
+    category: vocabulary
+
+  - incorrect: "onibus"
+    correct: "autocarro"
+    rule: "PT-PT usa 'autocarro' para bus"
+    category: vocabulary
+
+  - incorrect: "tela"
+    correct: "ecra"
+    rule: "PT-PT usa 'ecra' para screen"
+    category: vocabulary
+
+  - incorrect: "camera"
+    correct: "camara"
+    rule: "PT-PT usa 'camara' (camara municipal, camara fotografica)"
+    category: vocabulary
+    context: "Para camara municipal ou fotografica. 'Camera' nao existe em PT-PT."
+
+  - incorrect: "trem"
+    correct: "comboio"
+    rule: "PT-PT usa 'comboio' para train"
+    category: vocabulary
+
+  - incorrect: "bala"
+    correct: "rebucado"
+    rule: "PT-PT usa 'rebucado' para candy/sweet"
+    category: vocabulary
+    context: "Quando significa doce. 'Bala' em PT-PT refere-se a projetil."
+
+  - incorrect: "cafe da manha"
+    correct: "pequeno-almoco"
+    rule: "PT-PT usa 'pequeno-almoco' para breakfast"
+    category: vocabulary
+
+  - incorrect: "pedestre"
+    correct: "peao"
+    rule: "PT-PT usa 'peao' para pedestrian"
+    category: vocabulary
+
+  - incorrect: "calcada"
+    correct: "passeio"
+    rule: "PT-PT usa 'passeio' para sidewalk/pavement"
+    category: vocabulary
+
+  - incorrect: "garcom"
+    correct: "empregado de mesa"
+    rule: "PT-PT usa 'empregado de mesa' para waiter"
+    category: vocabulary
+
+  - incorrect: "geladeira"
+    correct: "frigorifico"
+    rule: "PT-PT usa 'frigorifico' para refrigerator"
+    category: vocabulary
+
+  - incorrect: "CEP"
+    correct: "codigo postal"
+    rule: "PT-PT usa 'codigo postal' (formato XXXX-XXX)"
+    category: vocabulary
+
+  - incorrect: "descarga"
+    correct: "autoclismo"
+    rule: "PT-PT usa 'autoclismo' para toilet flush"
+    category: vocabulary
+
+  - incorrect: "parada"
+    correct: "paragem"
+    rule: "PT-PT usa 'paragem' para stop (bus stop, etc.)"
+    category: vocabulary
+
+  - incorrect: "sanduiche"
+    correct: "sandes"
+    rule: "PT-PT usa 'sandes' (ou 'sandwich') para sandwich"
+    category: vocabulary
+
+  - incorrect: "fila"
+    correct: "bicha"
+    rule: "PT-PT usa 'bicha' para queue/line"
+    category: vocabulary
+    context: "Em contexto de fila de espera. 'Fila' tambem e usado mas 'bicha' e mais coloquial PT-PT."
+
+  - incorrect: "mouse"
+    correct: "rato"
+    rule: "PT-PT usa 'rato' para computer mouse"
+    category: vocabulary
+
+  - incorrect: "site"
+    correct: "sitio web"
+    rule: "PT-PT prefere 'sitio web' ou 'sitio' (formal); 'site' aceite informalmente"
+    category: vocabulary
+    note: "Em contexto tecnico informal, 'site' e largamente aceite"
+
+  - incorrect: "deletar"
+    correct: "apagar"
+    rule: "PT-PT usa 'apagar' ou 'eliminar' para delete"
+    category: vocabulary
+
+  - incorrect: "clicar"
+    correct: "clicar"
+    rule: "PT-PT aceita 'clicar' (verbo adaptado do ingles)"
+    category: vocabulary
+    note: "Valido em PT-PT. Alternativa formal: 'premir'"
+
+  - incorrect: "aplicativo"
+    correct: "aplicacao"
+    rule: "PT-PT usa 'aplicacao' para application/app"
+    category: vocabulary
+
+  - incorrect: "implementacao"
+    correct: "implementacao"
+    rule: "Valido em PT-PT (verificar acentuacao)"
+    category: vocabulary
+
+  - incorrect: "escanear"
+    correct: "digitalizar"
+    rule: "PT-PT usa 'digitalizar' para scan"
+    category: vocabulary
+
+  - incorrect: "printscreen"
+    correct: "captura de ecra"
+    rule: "PT-PT usa 'captura de ecra' para screenshot"
+    category: vocabulary
+
+  - incorrect: "backup"
+    correct: "copia de seguranca"
+    rule: "PT-PT prefere 'copia de seguranca' (formal); 'backup' aceite em contexto tecnico"
+    category: vocabulary
+
+  - incorrect: "time"
+    correct: "equipa"
+    rule: "PT-PT usa 'equipa' para team"
+    category: vocabulary
+    context: "Quando usado como substantivo para grupo de pessoas."
+
+  - incorrect: "treino"
+    correct: "formacao"
+    rule: "PT-PT prefere 'formacao' para training (profissional)"
+    category: vocabulary
+    context: "Em contexto profissional. 'Treino' e valido para exercicio fisico."
+
+  # === Padroes gramaticais ===
+  - incorrect: "me da"
+    correct: "da-me"
+    rule: "PT-PT usa enclise (pronome apos verbo) em frases afirmativas"
+    category: grammar
+    note: "Enclise e obrigatoria em inicio de frase afirmativa em PT-PT"
+
+  - incorrect: "me disse"
+    correct: "disse-me"
+    rule: "PT-PT usa enclise em frases afirmativas"
+    category: grammar
+
+  - incorrect: "te envio"
+    correct: "envio-te"
+    rule: "PT-PT usa enclise em frases afirmativas"
+    category: grammar
+
+  - incorrect: "estava fazendo"
+    correct: "estava a fazer"
+    rule: "PT-PT usa 'a + infinitivo' em vez de gerundio para acoes em progresso"
+    category: grammar
+
+  - incorrect: "estou trabalhando"
+    correct: "estou a trabalhar"
+    rule: "PT-PT usa 'a + infinitivo' em vez de gerundio"
+    category: grammar
+
+  - incorrect: "esta chovendo"
+    correct: "esta a chover"
+    rule: "PT-PT usa 'a + infinitivo' em vez de gerundio"
+    category: grammar
+
+  - incorrect: "voce"
+    correct: "si/o senhor/a senhora"
+    rule: "PT-PT formal evita 'voce'; usa formas de tratamento ou 3a pessoa"
+    category: grammar
+    context: "Em contexto formal. 'Voce' e aceite informalmente mas menos comum que em PT-BR."
+    note: "Em muitos contextos informais PT-PT, 'tu' e preferido a 'voce'"
+
+grammar_patterns:
+  enclise:
+    description: "Pronome apos o verbo em frases afirmativas (enclise)"
+    rule: "Em PT-PT, o pronome clitico vem apos o verbo em frases afirmativas simples"
+    examples:
+      - incorrect: "Me diga"
+        correct: "Diga-me"
+      - incorrect: "Se faz favor"
+        correct: "Faz favor / Se faz favor (aceite coloquialmente)"
+    exceptions:
+      - "Proclise obrigatoria apos particulas negativas: 'nao me diga'"
+      - "Proclise obrigatoria apos conjuncoes subordinativas: 'quando me disse'"
+      - "Proclise obrigatoria apos adverbios: 'ja te disse'"
+      - "Proclise obrigatoria apos pronomes relativos: 'que me ofereceu'"
+
+  progressive_tense:
+    description: "Uso de 'a + infinitivo' para acoes em curso"
+    rule: "PT-PT prefere 'estar a + infinitivo' em vez de 'estar + gerundio'"
+    examples:
+      - incorrect: "Estou comendo"
+        correct: "Estou a comer"
+      - incorrect: "Estamos desenvolvendo"
+        correct: "Estamos a desenvolver"
+
+  tu_vs_voce:
+    description: "Uso de 'tu' vs 'voce' em PT-PT"
+    rule: "PT-PT prefere 'tu' no tratamento informal e evita 'voce' no formal"
+    examples:
+      - informal: "Tu queres ir?"
+      - formal: "O senhor deseja ir?"
+      - avoid: "Voce quer ir? (aceite mas menos natural em PT-PT)"

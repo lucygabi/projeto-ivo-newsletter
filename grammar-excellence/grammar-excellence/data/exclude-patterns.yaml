@@ -1,0 +1,190 @@
+# Exclude patterns for grammar scanning
+# Patterns to exclude from content analysis
+version: "1.0.0"
+description: "Defines content patterns that should be excluded from grammar correction"
+
+directory_excludes:
+  - node_modules
+  - .git
+  - .aiox-core
+  - dist
+  - build
+  - .next
+  - __pycache__
+  - .cache
+  - coverage
+  - .nyc_output
+  - vendor
+  - .venv
+  - venv
+  - env
+  - .tox
+  - .eggs
+  - target
+  - out
+  - .output
+  - .nuxt
+  - .svelte-kit
+  - .turbo
+  - .vercel
+  - .netlify
+  - .terraform
+  - .serverless
+  - .aws-sam
+  - .gradle
+  - .maven
+  - bin
+  - obj
+
+content_excludes:
+  code_blocks:
+    pattern: "```[\\s\\S]*?```"
+    description: "Fenced code blocks (triple backtick)"
+    priority: 1
+    reason: "Code content must never be altered"
+
+  code_blocks_indented:
+    pattern: "^(    |\\t).*$"
+    description: "Indented code blocks (4 spaces or tab)"
+    priority: 1
+    reason: "Indented code blocks in Markdown"
+    note: "Only applies in Markdown context"
+
+  inline_code:
+    pattern: "`[^`]+`"
+    description: "Inline code (single backtick)"
+    priority: 1
+    reason: "Inline code references must be preserved"
+
+  frontmatter:
+    pattern: "^---[\\s\\S]*?---"
+    description: "YAML front matter in Markdown files"
+    priority: 1
+    reason: "Front matter is structured data, not prose"
+
+  urls:
+    pattern: "https?://[^\\s)>\\]\"']+"
+    description: "HTTP and HTTPS URLs"
+    priority: 1
+    reason: "URLs must never be modified"
+
+  email_addresses:
+    pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+    description: "Email addresses"
+    priority: 1
+    reason: "Email addresses must never be modified"
+
+  file_paths:
+    pattern: "(?:[a-zA-Z]:\\\\|/)[^\\s:*?\"<>|]+"
+    description: "File system paths (Unix and Windows)"
+    priority: 2
+    reason: "File paths are technical references"
+
+  variables_dollar_brace:
+    pattern: "\\$\\{[^}]+\\}"
+    description: "Dollar-brace template variables: ${variable}"
+    priority: 1
+    reason: "Template variables must be preserved exactly"
+
+  variables_double_brace:
+    pattern: "\\{\\{[^}]+\\}\\}"
+    description: "Double-brace template variables: {{variable}}"
+    priority: 1
+    reason: "Mustache/Handlebars template variables"
+
+  variables_single_brace:
+    pattern: "\\{[a-z_][a-z0-9_]*\\}"
+    description: "Single-brace placeholders: {variable}"
+    priority: 2
+    reason: "Python-style format string variables"
+
+  variables_percent:
+    pattern: "%[sdifFeEgGxXoOcCpPn%]"
+    description: "Printf-style format specifiers: %s, %d, etc."
+    priority: 2
+    reason: "C-style format specifiers"
+
+  html_tags:
+    pattern: "<[^>]+>"
+    description: "HTML/XML tags"
+    priority: 2
+    reason: "Markup tags are not prose"
+
+  html_entities:
+    pattern: "&[a-zA-Z]+;|&#[0-9]+;|&#x[0-9a-fA-F]+;"
+    description: "HTML entities: &amp; &#123; &#x1F; etc."
+    priority: 2
+    reason: "HTML entities are encoded characters"
+
+  markdown_links:
+    pattern: "\\[([^\\]]+)\\]\\(([^)]+)\\)"
+    description: "Markdown links — preserve URL part, scan text part"
+    priority: 2
+    reason: "Link URLs must be preserved; link text can be scanned"
+    partial_exclude: true
+    exclude_group: 2
+    scan_group: 1
+
+  markdown_images:
+    pattern: "!\\[([^\\]]*)\\]\\(([^)]+)\\)"
+    description: "Markdown images — preserve entirely"
+    priority: 1
+    reason: "Image references must not be modified"
+
+  markdown_reference_links:
+    pattern: "^\\[[^\\]]+\\]:\\s+.*$"
+    description: "Markdown reference-style link definitions"
+    priority: 1
+    reason: "Link definitions are technical references"
+
+  yaml_keys:
+    pattern: "^[\\s]*[a-zA-Z_][a-zA-Z0-9_-]*:"
+    description: "YAML keys (left of colon)"
+    priority: 2
+    reason: "YAML keys are identifiers, not prose"
+    context: "Only in .yaml/.yml files"
+
+  json_keys:
+    pattern: "\"[a-zA-Z_][a-zA-Z0-9_-]*\"\\s*:"
+    description: "JSON keys"
+    priority: 2
+    reason: "JSON keys are identifiers, not prose"
+    context: "Only in .json files"
+
+  regex_patterns:
+    pattern: "/[^/]+/[gimsuy]*"
+    description: "Regular expression literals"
+    priority: 2
+    reason: "Regex patterns are code"
+
+  import_statements:
+    pattern: "^(import|from|require|use|include)\\s+.*$"
+    description: "Import/require statements across languages"
+    priority: 1
+    reason: "Import statements are code"
+
+  comments_single_line:
+    pattern: "^\\s*(//|#|--|--)\\s*"
+    description: "Single-line comment markers"
+    priority: 3
+    reason: "Comment markers excluded, but comment text can be scanned"
+    partial_exclude: true
+    note: "Only the marker is excluded; comment content may be scanned"
+
+  command_line:
+    pattern: "^\\s*\\$\\s+.*$"
+    description: "Command-line examples (lines starting with $)"
+    priority: 1
+    reason: "Shell commands must not be modified"
+
+  emoji_codes:
+    pattern: ":[a-z_]+:"
+    description: "Emoji shortcodes :smile: :rocket: etc."
+    priority: 3
+    reason: "Emoji codes are identifiers"
+
+  version_numbers:
+    pattern: "v?\\d+\\.\\d+(\\.\\d+)?(-[a-zA-Z0-9.]+)?"
+    description: "Semantic version numbers: v1.2.3, 2.0.0-beta.1"
+    priority: 2
+    reason: "Version strings are technical identifiers"

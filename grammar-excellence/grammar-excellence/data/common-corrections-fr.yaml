@@ -1,0 +1,204 @@
+# Common FR corrections dictionary
+# French corrections and style guide
+version: "1.0.0"
+variant: fr
+standard: "Academie francaise / OQLF (Quebec variant noted separately)"
+description: "Corrections orthographiques, grammaticales et typographiques pour le francais"
+
+corrections:
+
+  # === Typographie francaise ===
+  - incorrect: "Bonjour!"
+    correct: "Bonjour !"
+    rule: "Espace insecable avant les signes doubles (! ? : ;)"
+    category: typography
+
+  - incorrect: "suivant:"
+    correct: "suivant :"
+    rule: "Espace insecable avant les deux-points"
+    category: typography
+
+  - incorrect: "question?"
+    correct: "question ?"
+    rule: "Espace insecable avant le point d'interrogation"
+    category: typography
+
+  - incorrect: "phrase;"
+    correct: "phrase ;"
+    rule: "Espace insecable avant le point-virgule"
+    category: typography
+
+  - incorrect: '"guillemets"'
+    correct: "guillemets"
+    rule: "Utiliser les guillemets francais avec espaces insecables"
+    category: typography
+
+  - incorrect: "10%"
+    correct: "10 %"
+    rule: "Espace insecable avant le symbole de pourcentage"
+    category: typography
+
+  - incorrect: "100$"
+    correct: "100 $"
+    rule: "Espace insecable avant le symbole monetaire (conventions francophones)"
+    category: typography
+
+  # === Majuscules accentuees ===
+  - incorrect: "Etude"
+    correct: "Etude"
+    rule: "Les majuscules doivent porter leurs accents"
+    category: orthography
+    note: "L'Academie francaise recommande l'accentuation des majuscules"
+
+  - incorrect: "A bientot"
+    correct: "A bientot"
+    rule: "Accent sur les majuscules: A -> A (avec accent grave)"
+    category: orthography
+
+  - incorrect: "Etre"
+    correct: "Etre"
+    rule: "Accent circumflexe sur les majuscules"
+    category: orthography
+
+  - incorrect: "Ca va"
+    correct: "Ca va"
+    rule: "Cedille sur les majuscules: C -> C"
+    category: orthography
+
+  # === Accord du participe passe ===
+  - incorrect: "Les fichiers que j'ai cree"
+    correct: "Les fichiers que j'ai crees"
+    rule: "Accord du participe passe avec le COD place avant (auxiliaire avoir)"
+    category: grammar
+
+  - incorrect: "Elle est alle"
+    correct: "Elle est allee"
+    rule: "Accord du participe passe avec le sujet (auxiliaire etre)"
+    category: grammar
+
+  - incorrect: "Les erreurs que nous avons corrige"
+    correct: "Les erreurs que nous avons corrigees"
+    rule: "Accord du participe passe avec le COD feminin pluriel place avant"
+    category: grammar
+
+  # === Confusions courantes ===
+  - incorrect: "sa"
+    correct: "ca"
+    rule: "Ne pas confondre 'sa' (possessif) et 'ca' (cela)"
+    category: grammar
+    context: "Quand le sens est 'cela'. Exemple: 'Ca marche' et non 'Sa marche'."
+
+  - incorrect: "a"
+    correct: "a"
+    rule: "Ne pas confondre 'a' (verbe avoir) et 'a' (preposition)"
+    category: grammar
+    context: "Astuce: si on peut remplacer par 'avait', c'est 'a' sans accent."
+
+  - incorrect: "ce"
+    correct: "se"
+    rule: "Ne pas confondre 'ce' (demonstratif) et 'se' (pronom reflechi)"
+    category: grammar
+    context: "Selon le contexte: 'Il se leve' (reflechi) vs 'Ce livre' (demonstratif)."
+
+  - incorrect: "quand a"
+    correct: "quant a"
+    rule: "'Quant a' (en ce qui concerne) s'ecrit avec -t"
+    category: orthography
+
+  - incorrect: "parmi les"
+    correct: "parmi les"
+    rule: "'Parmi' ne prend jamais de -s final (contrairement a 'hormis')"
+    category: orthography
+
+  - incorrect: "malgre que"
+    correct: "bien que"
+    rule: "'Malgre que' est considere incorrect; utiliser 'bien que' + subjonctif"
+    category: grammar
+
+  - incorrect: "apres que + subjonctif"
+    correct: "apres que + indicatif"
+    rule: "'Apres que' se construit avec l'indicatif, non le subjonctif"
+    category: grammar
+    note: "L'usage courant utilise souvent le subjonctif, mais la norme est l'indicatif"
+
+  - incorrect: "autant pour moi"
+    correct: "au temps pour moi"
+    rule: "Expression correcte: 'au temps pour moi'"
+    category: expression
+    note: "Debat en cours; les deux formes sont de plus en plus acceptees"
+
+  - incorrect: "pallier a"
+    correct: "pallier"
+    rule: "'Pallier' est un verbe transitif direct (sans 'a')"
+    category: grammar
+
+  - incorrect: "quelque soit"
+    correct: "quel que soit"
+    rule: "'Quel que' s'ecrit en deux mots devant 'etre' au subjonctif"
+    category: orthography
+
+  - incorrect: "parmis"
+    correct: "parmi"
+    rule: "'Parmi' ne prend jamais de -s"
+    category: orthography
+
+  - incorrect: "language"
+    correct: "langage"
+    rule: "En francais, c'est 'langage' (sans -u-); 'language' est l'anglais"
+    category: orthography
+    context: "Quand on parle de langage de programmation, langage informatique, etc."
+
+  - incorrect: "connection"
+    correct: "connexion"
+    rule: "En francais, c'est 'connexion' (avec -x-)"
+    category: orthography
+
+  - incorrect: "addresser"
+    correct: "adresser"
+    rule: "Un seul -d- en francais: 'adresser'"
+    category: orthography
+
+  - incorrect: "developpeur"
+    correct: "developpeur"
+    rule: "Verifier l'accentuation: developpeur (deux -p-)"
+    category: orthography
+
+  - incorrect: "deuxieme"
+    correct: "deuxieme"
+    rule: "Verifier l'accentuation: deuxieme (avec accent grave)"
+    category: orthography
+    note: "'Second' s'utilise quand il n'y a que deux elements"
+
+grammar_patterns:
+  elision:
+    description: "Elision obligatoire devant voyelle ou h muet"
+    rule: "Remplacer la voyelle finale par une apostrophe devant voyelle/h muet"
+    examples:
+      - incorrect: "le homme"
+        correct: "l'homme"
+      - incorrect: "je ai"
+        correct: "j'ai"
+      - incorrect: "de un"
+        correct: "d'un"
+
+  accord_adjectif:
+    description: "Accord de l'adjectif en genre et nombre"
+    rule: "L'adjectif s'accorde avec le nom qu'il qualifie"
+    examples:
+      - correct: "les corrections appliquees"
+      - correct: "une analyse complete"
+      - incorrect: "une analyse complet"
+
+  ne_explectif:
+    description: "Ne expletif apres certaines conjonctions"
+    rule: "Ne expletif (sans valeur negative) apres 'avant que', 'a moins que', etc."
+    examples:
+      - correct: "avant qu'il ne parte"
+      - also_correct: "avant qu'il parte"
+
+  nombres:
+    description: "Ecriture des nombres en lettres"
+    rule: "En francais soigne, les nombres de zero a seize s'ecrivent en lettres"
+    examples:
+      - correct: "trois fichiers"
+      - correct: "17 fichiers"

@@ -1,0 +1,268 @@
+# Common EN-US corrections dictionary
+# American English corrections and style guide
+version: "1.0.0"
+variant: en-us
+standard: "American English (AP/Chicago Manual of Style)"
+description: "Spelling, grammar, and style corrections for American English"
+
+corrections:
+
+  # === Spelling: -ize vs -ise ===
+  - incorrect: "organise"
+    correct: "organize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "realise"
+    correct: "realize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "recognise"
+    correct: "recognize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "optimise"
+    correct: "optimize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "customise"
+    correct: "customize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "minimise"
+    correct: "minimize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "maximise"
+    correct: "maximize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "authorise"
+    correct: "authorize"
+    rule: "EN-US uses -ize suffix"
+    category: spelling
+
+  - incorrect: "analyse"
+    correct: "analyze"
+    rule: "EN-US uses -yze suffix"
+    category: spelling
+
+  - incorrect: "paralyse"
+    correct: "paralyze"
+    rule: "EN-US uses -yze suffix"
+    category: spelling
+
+  # === Spelling: -or vs -our ===
+  - incorrect: "colour"
+    correct: "color"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  - incorrect: "favour"
+    correct: "favor"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  - incorrect: "behaviour"
+    correct: "behavior"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  - incorrect: "honour"
+    correct: "honor"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  - incorrect: "humour"
+    correct: "humor"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  - incorrect: "labour"
+    correct: "labor"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  - incorrect: "neighbour"
+    correct: "neighbor"
+    rule: "EN-US drops -u- in -our words"
+    category: spelling
+
+  # === Spelling: -er vs -re ===
+  - incorrect: "centre"
+    correct: "center"
+    rule: "EN-US uses -er ending"
+    category: spelling
+
+  - incorrect: "theatre"
+    correct: "theater"
+    rule: "EN-US uses -er ending"
+    category: spelling
+
+  - incorrect: "metre"
+    correct: "meter"
+    rule: "EN-US uses -er ending"
+    category: spelling
+
+  - incorrect: "litre"
+    correct: "liter"
+    rule: "EN-US uses -er ending"
+    category: spelling
+
+  - incorrect: "fibre"
+    correct: "fiber"
+    rule: "EN-US uses -er ending"
+    category: spelling
+
+  # === Spelling: other differences ===
+  - incorrect: "defence"
+    correct: "defense"
+    rule: "EN-US uses -se spelling"
+    category: spelling
+
+  - incorrect: "offence"
+    correct: "offense"
+    rule: "EN-US uses -se spelling"
+    category: spelling
+
+  - incorrect: "licence"
+    correct: "license"
+    rule: "EN-US uses -se for both noun and verb"
+    category: spelling
+
+  - incorrect: "practise"
+    correct: "practice"
+    rule: "EN-US uses -ce for both noun and verb"
+    category: spelling
+
+  - incorrect: "catalogue"
+    correct: "catalog"
+    rule: "EN-US drops -ue ending"
+    category: spelling
+
+  - incorrect: "dialogue"
+    correct: "dialog"
+    rule: "EN-US drops -ue ending (in technical contexts)"
+    category: spelling
+    note: "In literary contexts, 'dialogue' is also accepted in EN-US"
+
+  - incorrect: "programme"
+    correct: "program"
+    rule: "EN-US uses 'program' for all senses"
+    category: spelling
+
+  - incorrect: "grey"
+    correct: "gray"
+    rule: "EN-US uses 'gray'"
+    category: spelling
+
+  - incorrect: "judgement"
+    correct: "judgment"
+    rule: "EN-US drops -e- in judgment"
+    category: spelling
+
+  - incorrect: "ageing"
+    correct: "aging"
+    rule: "EN-US drops -e- in aging"
+    category: spelling
+
+  - incorrect: "aeroplane"
+    correct: "airplane"
+    rule: "EN-US uses 'airplane'"
+    category: spelling
+
+  # === Punctuation ===
+  - incorrect: "He said, 'hello'."
+    correct: "He said, \"hello.\""
+    rule: "EN-US uses double quotes as primary; periods go inside quotes"
+    category: punctuation
+
+  - incorrect: "red, white and blue"
+    correct: "red, white, and blue"
+    rule: "EN-US style guides (Chicago, APA) require the Oxford/serial comma"
+    category: punctuation
+    note: "AP style omits it, but most EN-US technical writing uses it"
+
+  # === Vocabulary ===
+  - incorrect: "lift"
+    correct: "elevator"
+    rule: "EN-US uses 'elevator'"
+    category: vocabulary
+    context: "When referring to the mechanism for vertical transport in buildings"
+
+  - incorrect: "boot"
+    correct: "trunk"
+    rule: "EN-US uses 'trunk' for car storage"
+    category: vocabulary
+    context: "When referring to car storage compartment"
+
+  - incorrect: "bonnet"
+    correct: "hood"
+    rule: "EN-US uses 'hood' for car front cover"
+    category: vocabulary
+
+  - incorrect: "lorry"
+    correct: "truck"
+    rule: "EN-US uses 'truck'"
+    category: vocabulary
+
+  - incorrect: "flat"
+    correct: "apartment"
+    rule: "EN-US uses 'apartment'"
+    category: vocabulary
+    context: "When referring to a residential unit"
+
+  - incorrect: "post"
+    correct: "mail"
+    rule: "EN-US uses 'mail'"
+    category: vocabulary
+    context: "When referring to postal service"
+
+  - incorrect: "rubbish"
+    correct: "trash"
+    rule: "EN-US uses 'trash' or 'garbage'"
+    category: vocabulary
+
+  - incorrect: "queue"
+    correct: "line"
+    rule: "EN-US uses 'line' for a queue of people"
+    category: vocabulary
+
+grammar_patterns:
+  serial_comma:
+    description: "Oxford/serial comma before 'and' in lists"
+    rule: "EN-US (Chicago/APA) requires comma before final 'and' in a list of 3+ items"
+    examples:
+      - incorrect: "apples, oranges and bananas"
+        correct: "apples, oranges, and bananas"
+
+  quotation_marks:
+    description: "Double quotes primary, punctuation inside"
+    rule: "EN-US uses double quotes as primary quotation marks; periods and commas always go inside"
+    examples:
+      - correct: "She said, \"Let's go.\""
+      - incorrect: "She said, \"Let's go\"."
+
+  date_format:
+    description: "Month-Day-Year format"
+    rule: "EN-US uses MM/DD/YYYY or Month DD, YYYY"
+    examples:
+      - correct: "March 21, 2026"
+      - correct: "03/21/2026"
+      - incorrect: "21 March 2026"
+      - incorrect: "21/03/2026"
+
+  collective_nouns:
+    description: "Collective nouns take singular verbs"
+    rule: "In EN-US, collective nouns (team, company, government) are singular"
+    examples:
+      - correct: "The team is working hard."
+        incorrect: "The team are working hard."
+      - correct: "Microsoft has announced..."
+        incorrect: "Microsoft have announced..."

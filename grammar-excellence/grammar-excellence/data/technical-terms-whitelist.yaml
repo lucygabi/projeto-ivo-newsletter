@@ -1,0 +1,468 @@
+# Technical terms whitelist
+# Terms that should NEVER be corrected in any language
+version: "1.0.0"
+description: "Technical terms preserved across all languages"
+acronyms_preserve_case: true
+
+categories:
+  programming_languages:
+    - JavaScript
+    - TypeScript
+    - Python
+    - Java
+    - Kotlin
+    - Swift
+    - Go
+    - Rust
+    - Ruby
+    - PHP
+    - C#
+    - C++
+    - Dart
+    - Lua
+    - Perl
+    - Scala
+    - Haskell
+    - Elixir
+    - Clojure
+    - R
+
+  frameworks_and_libraries:
+    - React
+    - Next.js
+    - Vue.js
+    - Nuxt.js
+    - Angular
+    - Svelte
+    - SvelteKit
+    - Express.js
+    - Fastify
+    - NestJS
+    - Django
+    - Flask
+    - FastAPI
+    - Spring Boot
+    - Rails
+    - Laravel
+    - Tailwind CSS
+    - Bootstrap
+    - Material UI
+    - Chakra UI
+    - Prisma
+    - Drizzle
+    - Sequelize
+    - Mongoose
+    - Redux
+    - Zustand
+    - Jotai
+    - Recoil
+    - TanStack Query
+    - SWR
+    - tRPC
+    - Zod
+    - Yup
+    - Joi
+
+  runtime_and_platforms:
+    - Node.js
+    - Deno
+    - Bun
+    - Docker
+    - Kubernetes
+    - AWS
+    - Azure
+    - GCP
+    - Vercel
+    - Netlify
+    - Cloudflare
+    - Supabase
+    - Firebase
+    - PlanetScale
+    - Neon
+    - Railway
+    - Render
+    - Fly.io
+    - DigitalOcean
+    - Heroku
+    - Lambda
+    - CloudFront
+    - S3
+
+  apis_and_protocols:
+    - API
+    - REST
+    - RESTful
+    - GraphQL
+    - gRPC
+    - WebSocket
+    - WebSockets
+    - webhook
+    - webhooks
+    - endpoint
+    - endpoints
+    - HTTP
+    - HTTPS
+    - SSH
+    - FTP
+    - SFTP
+    - TCP
+    - UDP
+    - TCP/IP
+    - DNS
+    - SSL
+    - TLS
+    - CORS
+    - CSRF
+    - XSS
+    - SOAP
+    - RPC
+    - MQTT
+    - AMQP
+
+  version_control:
+    - git
+    - Git
+    - GitHub
+    - GitLab
+    - Bitbucket
+    - commit
+    - commits
+    - push
+    - pull
+    - merge
+    - rebase
+    - branch
+    - branches
+    - fork
+    - clone
+    - stash
+    - cherry-pick
+    - pull request
+    - PR
+    - MR
+    - merge request
+
+  package_managers:
+    - npm
+    - yarn
+    - pnpm
+    - pip
+    - pipenv
+    - poetry
+    - cargo
+    - gem
+    - bundler
+    - composer
+    - NuGet
+    - Maven
+    - Gradle
+    - CocoaPods
+    - Homebrew
+    - apt
+    - yum
+    - dnf
+
+  databases:
+    - PostgreSQL
+    - MySQL
+    - MariaDB
+    - SQLite
+    - MongoDB
+    - Redis
+    - Memcached
+    - Elasticsearch
+    - DynamoDB
+    - Cassandra
+    - CockroachDB
+    - Neo4j
+    - InfluxDB
+    - TimescaleDB
+
+  devops_and_cicd:
+    - CI/CD
+    - CI
+    - CD
+    - deploy
+    - deployment
+    - pipeline
+    - DevOps
+    - SRE
+    - IaC
+    - Terraform
+    - Ansible
+    - Pulumi
+    - CloudFormation
+    - Helm
+    - ArgoCD
+    - Jenkins
+    - CircleCI
+    - Travis CI
+    - GitHub Actions
+    - Dockerfile
+    - docker-compose
+    - nginx
+    - Apache
+    - Caddy
+
+  architecture_patterns:
+    - SDK
+    - CLI
+    - GUI
+    - TUI
+    - CRUD
+    - SQL
+    - NoSQL
+    - ORM
+    - ODM
+    - middleware
+    - microservice
+    - microservices
+    - monolith
+    - serverless
+    - SaaS
+    - PaaS
+    - IaaS
+    - BaaS
+    - MVC
+    - MVVM
+    - MVP
+    - DDD
+    - CQRS
+    - event sourcing
+    - pub/sub
+    - message queue
+    - load balancer
+    - reverse proxy
+    - CDN
+    - SSR
+    - SSG
+    - ISR
+    - CSR
+    - SPA
+    - MPA
+    - PWA
+    - JAMstack
+
+  file_formats:
+    - JSON
+    - YAML
+    - YML
+    - XML
+    - CSV
+    - TSV
+    - HTML
+    - CSS
+    - SCSS
+    - SASS
+    - LESS
+    - SVG
+    - PDF
+    - PNG
+    - JPG
+    - JPEG
+    - GIF
+    - WebP
+    - AVIF
+    - ICO
+    - WOFF
+    - WOFF2
+    - TTF
+    - OTF
+    - MP4
+    - WebM
+    - MP3
+    - WAV
+    - TOML
+    - INI
+    - ENV
+    - Dockerfile
+    - Makefile
+
+  auth_and_security:
+    - OAuth
+    - OAuth2
+    - OpenID Connect
+    - OIDC
+    - JWT
+    - JWE
+    - JWS
+    - token
+    - tokens
+    - session
+    - sessions
+    - cookie
+    - cookies
+    - RBAC
+    - ABAC
+    - ACL
+    - RLS
+    - MFA
+    - 2FA
+    - TOTP
+    - SAML
+    - SSO
+    - LDAP
+    - bcrypt
+    - argon2
+    - HMAC
+    - RSA
+    - AES
+    - SHA-256
+    - SHA-512
+    - MD5
+
+  frontend_concepts:
+    - frontend
+    - backend
+    - fullstack
+    - full-stack
+    - responsive
+    - viewport
+    - breakpoint
+    - breakpoints
+    - flexbox
+    - grid
+    - CSS Grid
+    - DOM
+    - virtual DOM
+    - shadow DOM
+    - web component
+    - web components
+    - localStorage
+    - sessionStorage
+    - IndexedDB
+    - service worker
+    - web worker
+
+  data_concepts:
+    - database
+    - schema
+    - schemas
+    - migration
+    - migrations
+    - seed
+    - seeding
+    - query
+    - queries
+    - index
+    - indexes
+    - indices
+    - transaction
+    - transactions
+    - rollback
+    - cursor
+    - pagination
+    - offset
+    - ETL
+    - ELT
+    - data lake
+    - data warehouse
+
+  testing:
+    - unit test
+    - unit tests
+    - integration test
+    - e2e
+    - end-to-end
+    - mock
+    - mocks
+    - stub
+    - stubs
+    - spy
+    - spies
+    - fixture
+    - fixtures
+    - snapshot
+    - snapshots
+    - Jest
+    - Vitest
+    - Mocha
+    - Chai
+    - Cypress
+    - Playwright
+    - Puppeteer
+    - Selenium
+    - Testing Library
+    - RTL
+    - TDD
+    - BDD
+    - coverage
+    - assertion
+    - assertions
+
+  ai_and_ml:
+    - AI
+    - ML
+    - LLM
+    - GPT
+    - NLP
+    - NLU
+    - RAG
+    - embedding
+    - embeddings
+    - vector
+    - vectors
+    - transformer
+    - fine-tuning
+    - prompt
+    - prompts
+    - token
+    - tokenizer
+    - inference
+    - model
+    - neural network
+    - deep learning
+    - reinforcement learning
+    - Claude
+    - OpenAI
+    - Anthropic
+    - Hugging Face
+    - LangChain
+    - LlamaIndex
+    - Pinecone
+    - Weaviate
+    - Chroma
+    - FAISS
+
+  general_tech_terms:
+    - localhost
+    - framework
+    - library
+    - package
+    - module
+    - component
+    - plugin
+    - addon
+    - extension
+    - runtime
+    - compiler
+    - transpiler
+    - bundler
+    - linter
+    - formatter
+    - debugger
+    - profiler
+    - refactor
+    - refactoring
+    - boilerplate
+    - scaffold
+    - codebase
+    - repository
+    - monorepo
+    - workspace
+    - config
+    - dotfile
+    - README
+    - CHANGELOG
+    - LICENSE
+    - TODO
+    - FIXME
+    - HACK
+    - NOTE
+    - WARNING
+    - deprecated
+    - legacy
+    - breaking change
+    - semver
+    - changelog
+    - release notes
