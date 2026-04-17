@@ -1675,28 +1675,52 @@ img {
    PRINT — PDF otimizado
    ============================== */
 @media print {
-  section, .section, .destaque-card, .timeline-grid, .objectives-grid,
-  .eixos-section, .ecossistema-section, .cpdt-section, .numeros-section,
-  .pas-section, .ted-section, .vozes-section, .agenda-section,
-  .cta-section, .foto-evento, .footer, .editorial, .hero,
-  .articulacao-section, .areas-section,
-  .eco-card, .cpdt-card, .timeline-card, .objective-card,
-  .eixo-card, .cta-card, .ted-stat, .numero-card, .regional-card {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-  h2, h3, h4 {
-    break-after: avoid !important;
-    page-break-after: avoid !important;
-  }
+
   .newsletter {
     max-width: 100% !important;
     margin: 0 !important;
     box-shadow: none !important;
+    border-radius: 0 !important;
   }
+
+  section, .section, .hero, .editorial, .destaque-card,
+  .timeline-grid, .timeline-card, .objectives-grid, .objective-card,
+  .eixos-section, .eixo-card, .ecossistema-section, .eco-card,
+  .cpdt-section, .cpdt-card, .numeros-section, .numero-card,
+  .pas-section, .mapa-container, .regional-card,
+  .areas-section, .area-card, .articulacao-section, .articulacao-card,
+  .ted-section, .ted-stat, .vozes-section, .agenda-section,
+  .cta-section, .cta-card, .foto-evento, .footer,
+  .destaque-card, .eco-badge, .tag-row {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  h1, h2, h3, h4 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .section, .hero, .editorial, .numeros-section,
+  .pas-section, .ted-section, .vozes-section,
+  .agenda-section, .cta-section, .footer {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
   img {
     max-width: 100% !important;
     break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .foto-evento {
+    max-height: 300px !important;
+    overflow: hidden !important;
   }
 }
 </style>
@@ -1932,7 +1956,7 @@ img {
       <div class="numero-card">
         <div class="stat-number">109</div>
         <div class="stat-label">Nordeste</div>
-        <div class="stat-sub" style="color: #fff; font-weight: 900; opacity: 1; font-size: 16px;">59%</div>
+        <div class="stat-sub" style="color: #e0e0e0; font-weight: 700; opacity: 1; font-size: 15px;">59%</div>
       </div>
       <div class="numero-card">
         <div class="stat-number">3.016</div>
