@@ -1448,8 +1448,10 @@ img {
   * {
     text-align: left !important;
     word-spacing: normal !important;
-    hyphens: auto !important;
-    -webkit-hyphens: auto !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
   }
 
   /* Depois centraliza APENAS o que deve ser centralizado */
@@ -1498,6 +1500,15 @@ img {
   .cpdt-grid { grid-template-columns: 1fr; }
   .regional-grid { grid-template-columns: 1fr; }
   .mapa-container { grid-template-columns: 1fr; }
+
+  .regional-card {
+    padding: 20px;
+  }
+
+  .regional-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
 
   /* Eixos: ícone em cima, texto embaixo, centralizado */
   .eixo-card {
@@ -1921,7 +1932,7 @@ img {
       <div class="numero-card">
         <div class="stat-number">109</div>
         <div class="stat-label">Nordeste</div>
-        <div class="stat-sub">59%</div>
+        <div class="stat-sub" style="color: #fff; font-weight: 900; opacity: 1; font-size: 16px;">59%</div>
       </div>
       <div class="numero-card">
         <div class="stat-number">3.016</div>
