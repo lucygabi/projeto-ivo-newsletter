@@ -62,24 +62,33 @@ img {
   display: block;
 }
 
-p,
+/* Parágrafos longos: justify com word-spacing ajustado */
 .editorial-text,
 .pas-intro,
 .destaque-card p,
+.regional-card p,
+.articulacao-card p,
+.vozes-quote,
+.agenda-info p,
+.agenda-pauta p {
+  text-align: justify;
+}
+
+.editorial-text,
+.cpdt-intro,
+.ted-intro {
+  word-spacing: -0.5px;
+}
+
+/* Cards pequenos: center */
 .objective-card p,
 .eixo-card p,
 .eco-card p,
-.regional-card p,
-.articulacao-card p,
 .cta-card p,
-.vozes-quote,
-.agenda-info p,
 .timeline-desc,
 .ted-label,
-.cpdt-intro,
-.ted-intro,
 .cpdt-card p {
-  text-align: justify;
+  text-align: center;
 }
 
 /* ==============================
@@ -288,7 +297,8 @@ p,
 .timeline-desc {
   font-size: 15px;
   line-height: 1.5;
-  opacity: 0.85;
+  color: #444;
+  opacity: 1;
 }
 
 /* ==============================
@@ -371,14 +381,14 @@ p,
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: var(--texto);
+  color: #444;
   margin-bottom: 6px;
   line-height: 1.3;
 }
 
 .objective-card p {
   font-size: 13px;
-  color: var(--texto-leve);
+  color: #444;
   line-height: 1.4;
 }
 
@@ -435,12 +445,12 @@ p,
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: var(--texto);
+  color: #444;
 }
 
 .eixo-card p {
   font-size: 16px;
-  color: var(--texto-leve);
+  color: #444;
 }
 
 /* ==============================
@@ -530,14 +540,14 @@ p,
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--texto);
+  color: #444;
   margin-bottom: 4px;
 }
 
 .eco-card p {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color: var(--texto-leve);
+  color: #444;
 }
 
 /* ==============================
@@ -562,11 +572,13 @@ p,
 .cpdt-intro {
   font-size: 17px;
   line-height: 1.7;
-  color: var(--texto);
+  color: #333;
   margin-bottom: 32px;
   max-width: 900px;
   position: relative;
   z-index: 1;
+  text-align: justify;
+  word-spacing: -0.5px;
 }
 
 .cpdt-grid {
@@ -614,7 +626,7 @@ p,
 
 .cpdt-card p {
   font-size: 15px;
-  color: var(--texto-leve);
+  color: #333;
   line-height: 1.5;
 }
 
@@ -695,14 +707,16 @@ p,
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  opacity: 0.85;
+  color: #ddd;
+  opacity: 1;
   line-height: 1.4;
 }
 
 .stat-sub {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  opacity: 0.55;
+  color: #bbb;
+  opacity: 1;
   margin-top: 4px;
 }
 
@@ -944,8 +958,11 @@ p,
 .ted-card .ted-intro {
   font-size: 16px;
   line-height: 1.7;
-  opacity: 0.92;
+  color: rgba(255,255,255,0.95);
+  opacity: 1;
   margin-bottom: 32px;
+  text-align: justify;
+  word-spacing: -0.5px;
 }
 
 .ted-stats {
@@ -958,7 +975,7 @@ p,
   text-align: center;
   background: rgba(255,255,255,0.10);
   border-radius: 16px;
-  padding: 24px 14px;
+  padding: 28px 18px;
 }
 
 .ted-stat .ted-num {
@@ -974,7 +991,8 @@ p,
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  opacity: 0.8;
+  color: #fff;
+  opacity: 1;
   line-height: 1.3;
 }
 
@@ -1191,7 +1209,7 @@ p,
 
 .cta-card p {
   font-size: 16px;
-  color: var(--texto-leve);
+  color: #444;
   line-height: 1.5;
 }
 
@@ -1730,7 +1748,7 @@ p,
       <div class="objective-card">
         <div class="objective-num">6</div>
         <h4>Recriação da Plataforma Territórios da Cidadania</h4>
-        <p><a href="https://territoriosdacidadania.mda.gov.br" target="_blank" style="color: var(--verde-escuro); font-weight: 600;">SIT</a></p>
+        <p><a href="https://territoriosdacidadania.mda.gov.br" target="_blank" style="color: var(--verde-escuro); font-weight: 600;">Sistema de Informações Territoriais (SIT)</a><br><span style="font-size: 12px; color: #666;">territoriosdacidadania.mda.gov.br</span></p>
       </div>
     </div>
   </div>
@@ -1769,7 +1787,7 @@ p,
     <img class="quadro-bg" src="assets/mda/quadro-verde.png" alt="">
     <h2 class="section-title">Políticas Articuladas no Território</h2>
     <div class="eco-badge">
-      <span>O Território, Unidade Central de Planejamento</span>
+      <span>O Território, unidade de planejamento e gestão participativa</span>
     </div>
     <div class="eco-grid">
       <div class="eco-card">
@@ -2059,15 +2077,15 @@ p,
         <div class="ted-stat">
           <div class="ted-num">174</div>
           <div class="ted-label">Territórios atendidos</div>
-          <div class="ted-label" style="margin-top:6px; font-weight:700; opacity:1; color: var(--amarelo);">185 já revalidados</div>
+          <div class="ted-label" style="margin-top:6px; font-weight:700; opacity:1; color: #fff;">185 já revalidados</div>
         </div>
         <div class="ted-stat">
           <div class="ted-num">6</div>
           <div class="ted-label">Metas estratégicas</div>
-          <div class="ted-label" style="margin-top:6px; font-weight:700; opacity:1; color: var(--amarelo);">185 Planos de Desenvolvimento Territorial Sustentável</div>
+          <div class="ted-label" style="margin-top:6px; font-weight:700; opacity:1; color: #fff;">185 Planos de Desenvolvimento Territorial Sustentável</div>
         </div>
         <div class="ted-stat">
-          <div class="ted-num">SIT +</div>
+          <div class="ted-num">SIT&nbsp;+</div>
           <div class="ted-label">Colheita Digital</div>
         </div>
       </div>
@@ -2131,7 +2149,7 @@ p,
       </div>
       <div class="cta-card">
         <h4>Gestores</h4>
-        <p>Articulem as políticas públicas nos territórios e acompanhem os indicadores no SIT.</p>
+        <p>Articulem as políticas públicas nos territórios e acompanhem os indicadores no Sistema de Informações Territoriais (SIT).</p>
       </div>
     </div>
   </div>
