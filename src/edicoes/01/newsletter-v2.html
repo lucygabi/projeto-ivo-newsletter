@@ -164,14 +164,15 @@ img {
   line-height: 1.7;
   max-width: 680px;
   margin: 0 auto 24px;
-  opacity: 0.92;
+  opacity: 1;
 }
 
 .hero-data {
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  opacity: 0.65;
+  opacity: 1;
+  color: rgba(255,255,255,0.75);
   letter-spacing: 1px;
 }
 
@@ -341,7 +342,8 @@ img {
 .destaque-card p {
   font-size: 17px;
   line-height: 1.7;
-  opacity: 0.92;
+  opacity: 1;
+  color: rgba(255,255,255,0.95);
   margin-bottom: 16px;
 }
 
@@ -349,7 +351,8 @@ img {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  opacity: 0.65;
+  opacity: 1;
+  color: rgba(255,255,255,0.75);
   letter-spacing: 0.5px;
 }
 
@@ -715,7 +718,7 @@ img {
 .stat-sub {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color: #bbb;
+  color: #ddd;
   opacity: 1;
   margin-top: 4px;
 }
@@ -822,7 +825,7 @@ img {
 
 .regional-card p {
   font-size: 16px;
-  color: var(--texto-leve);
+  color: #444;
   line-height: 1.5;
 }
 
@@ -884,7 +887,7 @@ img {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--texto);
+  color: #444;
 }
 
 /* ==============================
@@ -919,7 +922,7 @@ img {
 
 .articulacao-card p {
   font-size: 16px;
-  color: var(--texto-leve);
+  color: #444;
   line-height: 1.5;
 }
 
@@ -951,7 +954,8 @@ img {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  opacity: 0.75;
+  opacity: 1;
+  color: rgba(255,255,255,0.85);
   margin-bottom: 24px;
 }
 
@@ -1322,7 +1326,7 @@ img {
 .footer-copy {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color: #666;
+  color: #999;
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 18px;
   margin-bottom: 0;
@@ -1439,29 +1443,31 @@ img {
   body { font-size: 16px; }
   .section-title { font-size: 32px; }
 
-  /* Textos: left no celular */
-  p,
-  blockquote,
+  /* Textos longos: left no celular */
   .editorial-text,
   .pas-intro,
   .destaque-card p,
-  .objective-card p,
-  .eixo-card p,
-  .eco-card p,
   .regional-card p,
   .articulacao-card p,
-  .cta-card p,
   .vozes-quote,
   .agenda-info p,
   .agenda-meta,
   .agenda-pauta p,
   .agenda-pauta ol,
+  .ted-intro,
+  .cpdt-intro {
+    text-align: left !important;
+  }
+
+  /* Cards pequenos: mantêm center no celular */
+  .objective-card p,
+  .eixo-card p,
+  .eco-card p,
+  .cta-card p,
   .timeline-desc,
   .ted-label,
-  .ted-intro,
-  .cpdt-intro,
   .cpdt-card p {
-    text-align: left !important;
+    text-align: center !important;
   }
 
   .hero {
@@ -1491,17 +1497,18 @@ img {
   .regional-grid { grid-template-columns: 1fr; }
   .mapa-container { grid-template-columns: 1fr; }
 
-  /* Eixos: ícone + texto lado a lado */
+  /* Eixos: ícone em cima, texto embaixo, centralizado */
   .eixo-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 16px;
-    text-align: left;
+    gap: 8px;
+    text-align: center;
     padding: 24px 20px;
   }
 
   .eixo-card .eixo-icon {
-    margin-bottom: 0;
+    margin-bottom: 8px;
     flex-shrink: 0;
   }
 
@@ -1593,14 +1600,14 @@ img {
   .hero-subtitle { font-size: 16px; }
   .hero .label-edicao { font-size: 13px; letter-spacing: 2px; }
 
-  /* Todos os grids: 1 coluna */
+  /* Todos os grids: 1 ou 2 colunas */
   .timeline-grid { grid-template-columns: 1fr; }
-  .objectives-grid { grid-template-columns: 1fr; }
+  .objectives-grid { grid-template-columns: repeat(2, 1fr); }
   .numeros-grid { grid-template-columns: repeat(2, 1fr); }
   .eixos-grid { grid-template-columns: 1fr; }
-  .eco-grid { grid-template-columns: 1fr; }
-  .eco-grid-3 .eco-card { flex: 0 1 100%; }
-  .areas-grid { grid-template-columns: 1fr; }
+  .eco-grid { grid-template-columns: repeat(2, 1fr); }
+  .eco-grid-3 .eco-card { flex: 0 1 calc(50% - 8px); }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .articulacao-grid { grid-template-columns: 1fr; }
   .ted-stats { grid-template-columns: repeat(2, 1fr); }
   .cta-grid { grid-template-columns: 1fr; }
@@ -1649,6 +1656,35 @@ img {
   .agenda-date .dia { font-size: 32px; }
   .agenda-info h4 { font-size: 17px; }
   .agenda-pauta ol { font-size: 14px; }
+}
+
+/* ==============================
+   PRINT — PDF otimizado
+   ============================== */
+@media print {
+  section, .section, .destaque-card, .timeline-grid, .objectives-grid,
+  .eixos-section, .ecossistema-section, .cpdt-section, .numeros-section,
+  .pas-section, .ted-section, .vozes-section, .agenda-section,
+  .cta-section, .foto-evento, .footer, .editorial, .hero,
+  .articulacao-section, .areas-section,
+  .eco-card, .cpdt-card, .timeline-card, .objective-card,
+  .eixo-card, .cta-card, .ted-stat, .numero-card, .regional-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  h2, h3, h4 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  .newsletter {
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+  img {
+    max-width: 100% !important;
+    break-inside: avoid !important;
+  }
 }
 </style>
 </head>
