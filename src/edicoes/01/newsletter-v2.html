@@ -717,8 +717,9 @@ img {
 
 .stat-sub {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #ddd;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e0e0e0;
   opacity: 1;
   margin-top: 4px;
 }
@@ -1443,30 +1444,31 @@ img {
   body { font-size: 16px; }
   .section-title { font-size: 32px; }
 
-  /* Textos longos: left no celular */
-  .editorial-text,
-  .pas-intro,
-  .destaque-card p,
-  .regional-card p,
-  .articulacao-card p,
-  .vozes-quote,
-  .agenda-info p,
-  .agenda-meta,
-  .agenda-pauta p,
-  .agenda-pauta ol,
-  .ted-intro,
-  .cpdt-intro {
+  /* RADICAL: tudo left no celular, elimina espaços de justify */
+  * {
     text-align: left !important;
+    word-spacing: normal !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
   }
 
-  /* Cards pequenos: mantêm center no celular */
-  .objective-card p,
-  .eixo-card p,
-  .eco-card p,
-  .cta-card p,
-  .timeline-desc,
-  .ted-label,
-  .cpdt-card p {
+  /* Depois centraliza APENAS o que deve ser centralizado */
+  .objective-card, .timeline-card, .numero-card, .stat-number,
+  .stat-label, .stat-sub, .ted-num, .eco-card, .area-card, .section-title,
+  h1, h2, h3, h4, .hero h1, .hero-subtitle, .label-edicao,
+  .eco-badge span, .cpdt-pct, .agenda-date,
+  .objective-card p, .objective-card h4, .objective-card .objective-num,
+  .eixo-card p, .eixo-card h4,
+  .eco-card p, .eco-card h4,
+  .cta-card p, .cta-card h4,
+  .timeline-desc, .timeline-label, .timeline-year,
+  .ted-label, .ted-stat,
+  .cpdt-card p, .cpdt-card h4, .cpdt-pct,
+  .hero, .hero-title, .hero-data,
+  .footer, .footer-brand, .footer-contact, .footer-sources,
+  .footer-ministry, .footer-copy, .footer-gov,
+  .numeros-section .section-title,
+  .area-card h4, .vozes-section .section-title {
     text-align: center !important;
   }
 
