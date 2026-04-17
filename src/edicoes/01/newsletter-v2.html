@@ -346,7 +346,7 @@ p,
 /* Objectives as square cards grid */
 .objectives-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
@@ -490,11 +490,17 @@ p,
 }
 
 .eco-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   position: relative;
   z-index: 1;
+}
+
+.eco-grid-3 .eco-card {
+  flex: 0 1 calc(33.333% - 11px);
+  min-width: 200px;
 }
 
 .eco-card {
@@ -1195,8 +1201,9 @@ p,
 .footer {
   background: #2d2d2d;
   color: #ccc;
-  padding: 48px 56px 36px;
+  padding: 48px 56px 24px;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .footer-logo-panel {
@@ -1300,6 +1307,8 @@ p,
   color: #666;
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 18px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* ==============================
@@ -1366,7 +1375,7 @@ p,
   .numeros-grid { grid-template-columns: repeat(3, 1fr); }
   .eixos-grid { grid-template-columns: repeat(3, 1fr); }
   .eco-grid { grid-template-columns: repeat(2, 1fr); }
-  .eco-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .eco-grid-3 .eco-card { flex: 0 1 calc(33.333% - 11px); }
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .articulacao-grid { grid-template-columns: repeat(2, 1fr); }
   .ted-stats { grid-template-columns: repeat(2, 1fr); }
@@ -1455,7 +1464,7 @@ p,
   .numeros-grid { grid-template-columns: repeat(2, 1fr); }
   .eixos-grid { grid-template-columns: 1fr; }
   .eco-grid { grid-template-columns: repeat(2, 1fr); }
-  .eco-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .eco-grid-3 .eco-card { flex: 0 1 calc(50% - 8px); }
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .articulacao-grid { grid-template-columns: 1fr; }
   .ted-stats { grid-template-columns: repeat(2, 1fr); }
@@ -1572,7 +1581,7 @@ p,
   .numeros-grid { grid-template-columns: repeat(2, 1fr); }
   .eixos-grid { grid-template-columns: 1fr; }
   .eco-grid { grid-template-columns: 1fr; }
-  .eco-grid-3 { grid-template-columns: 1fr; }
+  .eco-grid-3 .eco-card { flex: 0 1 100%; }
   .areas-grid { grid-template-columns: 1fr; }
   .articulacao-grid { grid-template-columns: 1fr; }
   .ted-stats { grid-template-columns: repeat(2, 1fr); }
@@ -1660,12 +1669,12 @@ p,
     <div class="timeline-grid">
       <div class="timeline-card card-2016">
         <div class="timeline-year">2016</div>
-        <div class="timeline-label">Origem</div>
-        <p class="timeline-desc">243 territórios originais em situação de inação</p>
+        <div class="timeline-label">Extinção</div>
+        <p class="timeline-desc">243 territórios reconhecidos pelo CONDRAF desativados no encerramento do Programa</p>
       </div>
       <div class="timeline-card card-2024">
         <div class="timeline-year">2024</div>
-        <div class="timeline-label">Retomada</div>
+        <div class="timeline-label">Retomada do programa</div>
         <p class="timeline-desc">Reestruturação pelo MDA/SFDT, Resolução CONDRAF n. 16/2024</p>
       </div>
       <div class="timeline-card card-2025">
@@ -1676,7 +1685,7 @@ p,
       <div class="timeline-card card-2026">
         <div class="timeline-year">2026</div>
         <div class="timeline-label">Consolidação</div>
-        <p class="timeline-desc">O PNDTS vira peça-chave para a transformação nacional</p>
+        <p class="timeline-desc">Os Territórios da Cidadania se consolidam, cada vez mais, como um espaço estratégico de governança das políticas públicas no Brasil</p>
       </div>
     </div>
   </div>
@@ -1717,6 +1726,11 @@ p,
         <div class="objective-num">5</div>
         <h4>Bem viver no campo</h4>
         <p>Qualidade de vida, cultura e identidade</p>
+      </div>
+      <div class="objective-card">
+        <div class="objective-num">6</div>
+        <h4>Recriação da Plataforma Territórios da Cidadania</h4>
+        <p><a href="https://territoriosdacidadania.mda.gov.br" target="_blank" style="color: var(--verde-escuro); font-weight: 600;">SIT</a></p>
       </div>
     </div>
   </div>
@@ -1821,7 +1835,7 @@ p,
       <div class="cpdt-card gov">
         <div class="cpdt-pct">50%</div>
         <h4>Governo</h4>
-        <p>MDA/SFDT, órgãos federais e Superintendências Estaduais do MDA</p>
+        <p>Coordenado pelo MDA/SFDT e participação de órgãos federais e superintendências estaduais do MDA.</p>
       </div>
       <div class="cpdt-card soc">
         <div class="cpdt-pct">50%</div>
@@ -1863,7 +1877,7 @@ p,
       </div>
       <div class="numero-card">
         <div class="stat-number">243</div>
-        <div class="stat-label">Territórios originais 2016</div>
+        <div class="stat-label">Base de referência 2016</div>
       </div>
     </div>
   </div>
@@ -2039,16 +2053,18 @@ p,
       <p class="ted-intro">Uma das iniciativas mais promissoras de 2026 é a parceria entre o Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA) e a Universidade de Brasília (UnB), através do Centro de Gestão e Estudos Estratégicos (Cegafi). O projeto integra o Sistema de Informações Territoriais (SIT) com a plataforma Colheita Digital, criando um ecossistema informacional robusto para gestão territorial.</p>
       <div class="ted-stats">
         <div class="ted-stat">
-          <div class="ted-num">R$ 12,4M</div>
+          <div class="ted-num">R$ 18M</div>
           <div class="ted-label">Investimento total</div>
         </div>
         <div class="ted-stat">
           <div class="ted-num">174</div>
           <div class="ted-label">Territórios atendidos</div>
+          <div class="ted-label" style="margin-top:6px; font-weight:700; opacity:1; color: var(--amarelo);">185 já revalidados</div>
         </div>
         <div class="ted-stat">
           <div class="ted-num">6</div>
           <div class="ted-label">Metas estratégicas</div>
+          <div class="ted-label" style="margin-top:6px; font-weight:700; opacity:1; color: var(--amarelo);">185 Planos de Desenvolvimento Territorial Sustentável</div>
         </div>
         <div class="ted-stat">
           <div class="ted-num">SIT +</div>
@@ -2073,7 +2089,6 @@ p,
       </div>
       <div>
         <p class="vozes-quote">&ldquo;O território não é só um mapa. É gente, é cultura, é o chão onde a gente planta e colhe sonhos. Quando o Estado chega junto, a transformação acontece de verdade.&rdquo;</p>
-        <div class="vozes-author">Representante territorial, Plenária Nacional 2025</div>
       </div>
     </div>
   </div>
